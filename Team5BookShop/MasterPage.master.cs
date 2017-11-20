@@ -10,7 +10,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     protected void btnSearch_Click(object sender, EventArgs e)
     {
         Session["SearchItem"] = txtSearch.Value.ToString();
-        Response.Redirect("SearchResult.aspx");
+        Response.Redirect("Main.aspx");
 
         
     }
