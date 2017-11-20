@@ -35,15 +35,12 @@ public partial class _Default : System.Web.UI.Page
 
     protected void BtnAddToCart_Click(object sender, EventArgs e)
     {
-<<<<<<< HEAD
+
         int quantity = Convert.ToInt16(qty);
         ShoppingCart sc = new ShoppingCart();
         sc.Add(bookItem, quantity);
-        Response.Request
-=======
-        Session["Quantity"] = qty.Value.ToString();
-        Response.Redirect("ShoppingCart.aspx");
->>>>>>> 05e0276902731be906295eb7c973657093ebbb8d
+        Response.Redirect(ShoppingCartPage.aspx);
+
     }
 
 

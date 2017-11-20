@@ -6,12 +6,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-<<<<<<< HEAD
                 <div class ="row"><br /></div>
                 <asp:Image ID="Image2"  runat="server" ImageUrl="image"  />
-=======
-                <%--<asp:Image ID="Image2" runat="server" ImageUrl="images/<%# Eval("ISBN") %>.jpg" />--%>
->>>>>>> 05e0276902731be906295eb7c973657093ebbb8d
             </div>
             <div class="col-md-8">
                 <div class ="row"><br /></div>
