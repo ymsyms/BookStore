@@ -30,12 +30,13 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
+
     protected void BtnAddToCart_Click(object sender, EventArgs e)
     {
-        int quantity = Convert.ToInt16(qty);
+        int quantity = Convert.ToInt32(this.qty);
         ShoppingCart sc = new ShoppingCart();
         sc.Add(bookItem, quantity);
-        Response.Redirect("ShoppingCartPage.aspx");
+        Response.Redirect("~/Main.aspx");
     }
 }
 
