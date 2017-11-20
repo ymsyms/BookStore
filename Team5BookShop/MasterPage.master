@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/StyleSheet.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    </head>
+<body>
+    <form id="form1" runat="server">        
+        <div class="container">
+            <div class="header">
+                <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+            </div>
+            <div class="row">
+                               
+                <div class="col-md-4">
+                    <asp:TextBox ID="TextBox1" runat="server" placeholder="Search by Title" Width="182px"></asp:TextBox>
+                    <asp:Button ID="btnSearch" runat="server" Text="" />
+                </div>
+
+                <div class="col-md-4">
+                    Shopping Cart
+                    <asp:Button ID="btnCart" runat="server" Text="" />
+                </div>
+               
+                <div class="col-md-2">
+                    Sign In
+                    <asp:Button ID="btnSignIn" runat="server" Text="" />
+                </div>
+                
+                <div class="col-md-2">
+                     Sign Up
+                    <asp:Button ID="btnSignUp" runat="server" Text="" />
+                </div>               
+            </div>
+
+            <div class="row">
+                <div class ="col-md-4">
+                    <asp:TreeView ID="TreeView1" runat="server"></asp:TreeView>
+                </div>
+
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                </div>
+                    
+            </div>
+        </div>
+
+
+
+    </form>
+</body>
+</html>
