@@ -4,9 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container">
+        
         <div class="row">
             <div class="col-md-4">
-                <asp:Image ID="Image2"  runat="server" ImageUrl='<%# string.Format("~/images/{0}",Eval("ISBN"))%>.jpg' />
+                <div class ="row"><br /></div>
+                <asp:Image ID="Image2"  runat="server" ImageUrl="image" />
             </div>
             <div class="col-md-8">
                 <div class ="row"><br /></div>

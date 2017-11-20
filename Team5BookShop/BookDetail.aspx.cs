@@ -17,9 +17,9 @@ public partial class _Default : System.Web.UI.Page
         if (val != null)
         {
             bookId = Convert.ToInt32(val);
-            
             bookItem = new BookBusinesslogic().GetBookDetails(bookId);
             Category cat = new BookBusinesslogic().GetCategory(bookItem.CategoryID);
+            Image2.ImageUrl = "images/" + bookItem.ISBN + ".jpg" ;
             lblTitle.Text = bookItem.Title;
             lblCat.Text = Convert.ToString(cat.CategoryName);
             lblISBN.Text = bookItem.ISBN;
