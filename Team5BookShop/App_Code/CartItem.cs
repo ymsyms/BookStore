@@ -54,7 +54,7 @@ public class CartItem
         }
     }
 
-    public double SubTotal
+    public decimal SubTotal
     {
         get
         {
