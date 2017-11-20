@@ -29,14 +29,25 @@ public partial class _Default : System.Web.UI.Page
             lblPrice.Text = Convert.ToString(bookItem.Price);
         }
     }
-
-
-    protected void BtnAddToCart_Click(object sender, EventArgs e)
+            
+    protected void BtnAddToCart_Click1(object sender, EventArgs e)
     {
-        int quantity = Convert.ToInt32(this.qty);
+        int quantity = Convert.ToInt32(qty.Value);
         ShoppingCart sc = new ShoppingCart();
-        sc.Add(bookItem, quantity);
-        Response.Redirect("~/Main.aspx");
+
+        if (sc.Add(bookItem, quantity))
+        {
+            ClientScript.RegisterStartupScript(Page.GetType(),
+     "MessageBox",
+     "<script language='javascript'>alert(Item added to shopping cart successfully!);</script>");
+            Response.Redirect("~/Main.aspx");
+        }
+        else
+        {
+            ClientScript.RegisterStartupScript(Page.GetType(),
+     "MessageBox",
+     "<script language='javascript'>alert(Invalid Quantity!);</script>");
+        }
     }
 }
 
