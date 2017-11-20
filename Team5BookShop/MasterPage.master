@@ -44,11 +44,11 @@
                 <div class="left-col">           
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=1">Children</asp:HyperLink>
                     <br />
-                    <asp:HyperLink ID="HyperLink2" runat="server">Finance</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=2">Finance</asp:HyperLink>
                      <br />
-                    <asp:HyperLink ID="HyperLink3" runat="server">Non-Factional</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=3">Non-Factional</asp:HyperLink>
                      <br />
-                    <asp:HyperLink ID="HyperLink4" runat="server">Technical</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=4">Technical</asp:HyperLink>
                 </div>
                 <div class="right-col">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
