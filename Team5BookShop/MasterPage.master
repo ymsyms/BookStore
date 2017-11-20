@@ -44,6 +44,7 @@
                 <div class="left-col">
                 </div>
                 <div class="right-col">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
                 </div>
             </div>
         </div>
