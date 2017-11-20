@@ -14,13 +14,18 @@ public class ShoppingCart
     {
         cart = new List<CartItem>();
     }
-    
-    public void Add(Book book, int quantity)
+
+    public bool Add(Book book, int quantity)
     {
         if (book.Stock >= quantity)
         {
             CartItem newItem = new CartItem(book, quantity);
             cart.Add(newItem);
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

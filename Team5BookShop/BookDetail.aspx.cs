@@ -37,16 +37,11 @@ public partial class _Default : System.Web.UI.Page
 
         if (sc.Add(bookItem, quantity))
         {
-            ClientScript.RegisterStartupScript(Page.GetType(),
-     "MessageBox",
-     "<script language='javascript'>alert(Item added to shopping cart successfully!);</script>");
             Response.Redirect("~/Main.aspx");
         }
         else
         {
-            ClientScript.RegisterStartupScript(Page.GetType(),
-     "MessageBox",
-     "<script language='javascript'>alert(Invalid Quantity!);</script>");
+            Label1.Text = "Invalid Quantity";
         }
     }
 }

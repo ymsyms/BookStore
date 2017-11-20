@@ -50,8 +50,11 @@
                     <div class="col-md-3">
                         <asp:Label ID="lblQuantity" runat="server" Text="Quantity"></asp:Label>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-3">
                         <input type="number" id="qty" runat="server" min="0" />
+                    </div>
+                    <div class="col-md-3">
+                     <asp:Label ID="Label1" runat="server" Text="" ForeColor="#CC3300" Font-Bold="True"></asp:Label>
                     </div>
                 </div>
                 <div class ="row"><br /></div>
@@ -69,7 +72,7 @@
                     <div class="col-md-3">
                         <asp:Button ID="BtnAddToCart" runat="server" Text="Add To Cart" OnClick="BtnAddToCart_Click1" />
                     </div>
-                </div>
+                </div>                
             </div>
         </div>
     </div>
