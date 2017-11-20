@@ -44,7 +44,7 @@
                         <asp:Label ID="lblQuantity" runat="server" Text="Quantity"></asp:Label>
                     </div>
                     <div class="col-md-5">
-                        <input type="number" id="qty" runat="server" min="0" />
+                        &nbsp;<input type="number" id="qty" runat="server" min="0" />
                     </div>
                 </div>
                 <div class="row">
@@ -56,13 +56,16 @@
                         </asp:DropDownList>
                     </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="span12 pagination-centered">
-                    <asp:Button ID="BtnAddToCart" runat="server" Text="Add To Cart" />
+
+                <div class="row">
+                    <div class="col-md-3">
+
+                        <asp:Button ID="BtnAddToCart" runat="server" Text="Add To Cart" />
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 </asp:Content>
 
