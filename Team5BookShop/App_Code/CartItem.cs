@@ -36,6 +36,10 @@ public class CartItem
         {
             return quantity;
         }
+        set
+        {
+            quantity = value;
+        }
     }
 
     public decimal UnitPrice
