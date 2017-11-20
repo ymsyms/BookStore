@@ -23,13 +23,14 @@ public partial class ShoppingCartPage : System.Web.UI.Page
         {
             Label emptyCartLabel = new Label();
             emptyCartLabel.Text = "Your Shopping Cart is Empty";
-            ShoppingCartph.Controls.Add(emptyCartLabel);
+            Panel1.Controls.Add(emptyCartLabel);
+            GridView1.Visible = false;
+            //ShoppingCartph.Controls.Add(emptyCartLabel);
         }
         else
         {
             GridView1.DataSource = userCart.Cart;
             GridView1.DataBind();
-            ShoppingCartph.Controls.Add(GridView1);
         }
     }
 }
