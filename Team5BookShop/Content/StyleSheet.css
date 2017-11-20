@@ -7,21 +7,19 @@
     border: 0;
     padding: 0;
     position: relative;
-    height : 80px;
 }
 .logo
 {
-    width : 16%;
-    margin-left:2%;
-
+    width : 20%;
+    margin :  -4% 0 -4% 0;
 }
 .menu
 {
     border-bottom: 1px solid #d0d0d0;
     font-size: 90%;
-    padding: 7px 20px 0px 7px;
+    padding: 5px 20px;
     clear : both;
-    height : 46px;
+    height : 50px;
     background-color : #5DBCD2;
 }
 .content
