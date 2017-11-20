@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <asp:Image ID="Image2" runat="server" ImageUrl="images/<%# Eval("ISBN") %>.jpg" />
+                <asp:Image ID="Image2"  runat="server" ImageUrl='<%# string.Format("~/images/{0}",Eval("ISBN"))%>.jpg' />
             </div>
             <div class="col-md-8">
                 <div class ="row"><br /></div>
@@ -50,7 +50,7 @@
                         <asp:Label ID="lblQuantity" runat="server" Text="Quantity"></asp:Label>
                     </div>
                     <div class="col-md-5">
-                        &nbsp;<input type="number" id="qty" runat="server" min="0" />
+                        <input type="number" id="qty" runat="server" min="0" />
                     </div>
                 </div>
                 <div class ="row"><br /></div>
@@ -66,7 +66,7 @@
                 <div class ="row"><br /></div>
                 <div class="row">
                     <div class="col-md-3">
-                        <asp:Button ID="BtnAddToCart" runat="server" Text="Add To Cart" />
+                        <asp:Button ID="BtnAddToCart" runat="server" Text="Add To Cart" OnClick="BtnAddToCart_Click" />
                     </div>
                 </div>
             </div>

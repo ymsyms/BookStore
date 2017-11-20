@@ -8,6 +8,8 @@ using System.Web;
 /// </summary>
 public class BookBusinesslogic
 {
+    Book book;
+    int catId;
     public BookBusinesslogic()
     {
 
@@ -17,10 +19,22 @@ public class BookBusinesslogic
     {
         using (BookshopEntities1 bookEntity = new BookshopEntities1())
         {
-            Book book = (from bk in bookEntity.Books
+             book = (from bk in bookEntity.Books
                          where bk.BookID == id
                          select bk).First();
+            catId = book.CategoryID;
             return book;
+        }
+
+    }
+    public Category GetCategory(int catId)
+    {
+        using (BookshopEntities1 category = new BookshopEntities1())
+        {
+            Category catgry = (from ct in category.Categories
+                               where ct.CategoryID == catId
+                               select ct).First();
+            return catgry;
         }
 
     }
