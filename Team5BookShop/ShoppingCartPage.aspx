@@ -4,36 +4,17 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <asp:PlaceHolder ID="ShoppingCartph" runat="server"></asp:PlaceHolder>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" ItemType="CartItem">
         <Columns>
-            <asp:TemplateField HeaderText="Title">
-                <ItemTemplate>
-                    <asp:Label ID="Label1" runat="server" Text='<%#Bind("Title") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="Unit Price">
-                <EditItemTemplate>
-                    <asp:TextBox ID="TextBox2" runat="server" Text='<%#Bind("UnitPrice") %>'></asp:TextBox>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label2" runat="server" Text='<%#Bind("UnitPrice") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
+            <asp:BoundField DataField="Title" HeaderText="Title" />
+            <asp:BoundField DataField="UnitPrice" HeaderText="Unit Price" />
             <asp:TemplateField HeaderText="Quantity">
-                <EditItemTemplate>
-                    <asp:TextBox ID="TextBox3" runat="server" Text='<%#Bind("UnitPrice") %>'></asp:TextBox>
-                </EditItemTemplate>
                 <ItemTemplate>
-                    <asp:Label ID="Label3" runat="server" Text='<%#Bind("UnitPrice") %>'></asp:Label>
+                    <asp:TextBox ID="Quantitytb" Width="40px" runat="server" Text='<%#:Item.Quantity%>' ></asp:TextBox>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="SubTotal">
-                <ItemTemplate>
-                    <asp:Label ID="Label4" runat="server" Text='<%#Bind("UnitPrice") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:CommandField ShowEditButton="True" />
-            <asp:CommandField ShowDeleteButton="True" />
+            <asp:BoundField DataField="SubTotal" HeaderText="Sub Total" />
+
         </Columns>
     </asp:GridView>
 </asp:Content>

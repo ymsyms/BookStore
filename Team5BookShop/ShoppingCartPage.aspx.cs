@@ -12,6 +12,7 @@ public partial class ShoppingCartPage : System.Web.UI.Page
         //Just to test
         Book boo = new Book();
         boo.Stock = 100;
+        boo.Title = "kikiki";
         ShoppingCart userCart = new ShoppingCart();
         userCart.Add(boo, 3);
         userCart.Add(boo, 4);
@@ -26,10 +27,9 @@ public partial class ShoppingCartPage : System.Web.UI.Page
         }
         else
         {
-            
-            var qry = userCart.Cart.Select(x => new { x.Title, x.UnitPrice, x.Quantity, x.SubTotal }).ToList();
-            GridView1.DataSource = qry;
+            GridView1.DataSource = userCart.Cart;
             GridView1.DataBind();
+            ShoppingCartph.Controls.Add(GridView1);
         }
     }
 }
