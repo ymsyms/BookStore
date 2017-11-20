@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class ="row"><br /></div>
-                <asp:Image ID="Image2"  runat="server" ImageUrl="image" />
+                <asp:Image ID="Image2"  runat="server" ImageUrl="image" class="img-fluid" alt="Responsive image" />
             </div>
             <div class="col-md-8">
                 <div class ="row"><br /></div>
