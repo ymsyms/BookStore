@@ -14,6 +14,13 @@ public class CartItem
         double unitPrice;
         int bookID;
 
+    public CartItem(Book book, int quantity)
+    {
+        this.title = book.Title;
+        this.quantity = quantity;
+        this.unitPrice = book.Price;
+        this.bookID = book.BookID;
+    }
 
     public string Title
     {
