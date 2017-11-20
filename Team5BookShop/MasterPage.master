@@ -27,21 +27,14 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="top-cart-inner" id="click">
-                        <div class="link-top-cart" id="link-top-cart">
+                    <div class="top-cart-inner">
+                        <div class="link-top-cart">
                             <a href="#" id="topcartlink" class="top-link-cart">
                                 <span>cart</span>
                                 <span class="white"><span class="price">S$0.00</span></span>
                             </a>
                             <div class="cartqty">
                                 0			
-                            </div>
-                        </div>
-                        <div class="top-cart-content" id="top_cart" style="display: none;">
-                            <div class="block block-cart-top">
-                                <div class="block-content">
-                                    <p class="empty">You have no items in your shopping cart.</p>
-                                </div>
                             </div>
                         </div>
                     </div>

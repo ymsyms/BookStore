@@ -50,12 +50,21 @@
 .top-cart-inner {
     display: inline-block;
     position: relative;
+    background: #5DBCD2;
 }
-.quick-access .search-cart .link-top-cart {
+.link-top-cart {
     padding: 8px 0px 8px 0px;
     margin-top: 0px;
     cursor: pointer;
-    background: #DA0313;
+    
+}
+.top-link-cart {
+    color: #ffffff;
+    font: normal 12px/1.35 arial,helvetica,sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px 20px 15px;
+    text-transform: uppercase;
 }
 .cartqty {
     border-left: 1px solid #EA4040;
