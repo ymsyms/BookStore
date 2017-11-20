@@ -10,45 +10,42 @@
     <link href="Content/StyleSheet.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    </head>
+</head>
 <body>
-    <form id="form1" runat="server">        
+    <form id="form1" runat="server">
         <div class="container">
             <div class="header">
-                <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/images/bookstore-logo.jpg" class="logo" />
             </div>
-            <div class="row">
-                               
+            <div class="menu">
                 <div class="col-md-4">
-                    <asp:TextBox ID="TextBox1" runat="server" placeholder="Search by Title" Width="182px"></asp:TextBox>
-                    <asp:Button ID="btnSearch" runat="server" Text="" />
+                    <form class="navbar-form" role="search">
+                        <div class="input-group add-on">
+                            <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text" />
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <asp:Button ID="btnCart" runat="server" Text="Shopping Cart" />
+                </div>
+                <div class="col-md-2">
+                    <asp:Button ID="btnSignIn" runat="server" Text="Sign In" />
                 </div>
 
-                <div class="col-md-4">
-                    Shopping Cart
-                    <asp:Button ID="btnCart" runat="server" Text="" />
-                </div>
-               
                 <div class="col-md-2">
-                    Sign In
-                    <asp:Button ID="btnSignIn" runat="server" Text="" />
+                    <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" />
                 </div>
-                
-                <div class="col-md-2">
-                     Sign Up
-                    <asp:Button ID="btnSignUp" runat="server" Text="" />
-                </div>               
             </div>
 
-            <div class="row">
-                <div class ="col-md-4">
-                    <asp:TreeView ID="TreeView1" runat="server"></asp:TreeView>
+            <div class="content">
+                <div class="left-col">
                 </div>
-
-                <div>
+                <div class="right-col">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
                 </div>
-                    
             </div>
         </div>
 
