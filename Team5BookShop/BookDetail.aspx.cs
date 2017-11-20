@@ -33,8 +33,12 @@ public partial class _Default : System.Web.UI.Page
 
     protected void BtnAddToCart_Click(object sender, EventArgs e)
     {
-        Session["Quantity"] = qty.Value.ToString();
-        Response.Redirect("ShoppingCart.aspx");
+        //shoppingcart.cs
+        //ShoppingCart sc = new ShoppingCart();
+        //sc.Add(book, quantity);
+
+        //add method if ok
+        //Response.Redirect("ShoppingCart.aspx");
     }
 }
 
