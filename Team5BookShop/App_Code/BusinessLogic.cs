@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using 
 
 /// <summary>
 /// Summary description for BusinessLogic
@@ -39,19 +38,19 @@ public class BusinessLogic
     //03 registration page methods (by inetmgr)
 
     //04 shopping cart page methods
-    //public static List<CartItem> GetShoppingCart()
-    //{
-    //    return shoppingCart;
-    //}
+    public static List<CartItem> GetShoppingCart()
+    {
+        return shoppingCart;
+    }
 
     //EditCartItem (in CodeBehind)
 
-    //public static decimal GetShoppingCartTotalPrice()
-    //{
-    //    return shoppingCart.TotalPrice();
-    //}
+    public static decimal GetShoppingCartTotalPrice()
+    {
+        return shoppingCart.TotalPrice();
+    }
 
-    public static void Checkout(short userID, string mailingAddress, DateTime orderDate, double totalPrice, ShoppingCart shoppingCart)
+    public static void Checkout(string userID, string mailingAddress, DateTime orderDate, decimal totalPrice)
     {
         using (BookshopEntities context = new BookshopEntities())
         {
@@ -65,7 +64,7 @@ public class BusinessLogic
             context.SaveChanges();
 
             //Create OrderDetails from CartItems
-            foreach (CartItem item in shoppingCart.Cart)
+            foreach (CartItem item in shoppingCart)
             {
                 OrderDetail orderDetail = new OrderDetail();
                 orderDetail.OrderID = context.Orders.Max(x => x.OrderID);

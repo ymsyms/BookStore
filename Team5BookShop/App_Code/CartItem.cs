@@ -36,9 +36,13 @@ public class CartItem
         {
             return quantity;
         }
+        set
+        {
+            quantity = value;
+        }
     }
 
-    public double UnitPrice
+    public decimal UnitPrice
     {
         get
         {
@@ -54,7 +58,7 @@ public class CartItem
         }
     }
 
-    public double SubTotal
+    public decimal SubTotal
     {
         get
         {
