@@ -11,20 +11,16 @@ public partial class SearchResult : System.Web.UI.Page
     BookshopEntities1 bookEntity;
     protected void Page_Load(object sender, EventArgs e)
     {
-        //MasterPageType masterPage = (MasterPageType)page.Master;
+        string search;
+        search= (string)(Session["SearchItem"]);
 
         bookEntity = new BookshopEntities1();
         BusinessLogic bl = new BusinessLogic();
         List<Book> lstBook;
-
-        //string search;
-        ////search= (string)(Session["SearchItem"]);
-
-        //search =  Master.FindControl("txtSearch").ToString();
-
+        
         try
         {
-            lstBook = bl.GetAllBooks();
+            lstBook = bl.GetBooksByTitle(search);
 
             int j = 0;
 

@@ -23,7 +23,8 @@
                     <div class="input-group add-on">
                         <input class="form-control" placeholder="Search" runat="server" name="srch-term" id="txtSearch" type="text" />
                         <div class="input-group-btn">
-                            <button class="btn btn-default" id="btnSearch" type="submit" ><i class="glyphicon glyphicon-search"></i></button>
+                            <asp:Button class="btn btn-default" id="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click"/>
+                            <%--<i class="glyphicon glyphicon-search" style="height: 14px"></i>--%>
                         </div>
                     </div>
                 </div>
