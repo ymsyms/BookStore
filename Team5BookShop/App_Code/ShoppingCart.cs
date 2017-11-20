@@ -9,6 +9,11 @@ using System.Web;
 public class ShoppingCart
 {
     List<CartItem> cart;
+
+    public ShoppingCart()
+    {
+        cart = new List<CartItem>();
+    }
     
     public void Add(Book book, int quantity)
     {
