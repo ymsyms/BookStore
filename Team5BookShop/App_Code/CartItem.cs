@@ -11,7 +11,7 @@ public class CartItem
     
         string title;
         int quantity;
-        double unitPrice;
+        decimal unitPrice;
         int bookID;
 
     public CartItem(Book book, int quantity)
