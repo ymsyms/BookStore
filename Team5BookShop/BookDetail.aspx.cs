@@ -5,11 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 public partial class _Default : System.Web.UI.Page
 {
     BookshopEntities1 bk = new BookshopEntities1();
     int bookId;
     Book bookItem;
+    CartItem cartItem;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -32,8 +34,13 @@ public partial class _Default : System.Web.UI.Page
 
     protected void BtnAddToCart_Click(object sender, EventArgs e)
     {
-
+        int quantity = Convert.ToInt16(qty);
+        ShoppingCart sc = new ShoppingCart();
+        sc.Add(bookItem, quantity);
+        Response.Request
     }
+
+
 }
 
  
