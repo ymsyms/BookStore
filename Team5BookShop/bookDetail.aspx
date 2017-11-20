@@ -67,7 +67,7 @@
                 <div class ="row"><br /></div>
                 <div class="row">
                     <div class="col-md-3">
-                        <asp:Button ID="BtnAddToCart" runat="server" Text="Add To Cart" />
+                        <asp:Button ID="BtnAddToCart" runat="server" Text="Add To Cart" OnClick="BtnAddToCart_Click1" />
                     </div>
                 </div>
             </div>
