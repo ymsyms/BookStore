@@ -39,7 +39,7 @@ public partial class _Default : System.Web.UI.Page
         int quantity = Convert.ToInt16(qty);
         ShoppingCart sc = new ShoppingCart();
         sc.Add(bookItem, quantity);
-        Response.Redirect(ShoppingCartPage.aspx);
+        Response.Redirect("ShoppingCart.aspx");
 
     }
 
