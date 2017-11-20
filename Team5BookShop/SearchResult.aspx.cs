@@ -4,15 +4,23 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Util;
 
-public partial class Main : System.Web.UI.Page
+public partial class SearchResult : System.Web.UI.Page
 {
     BookshopEntities1 bookEntity;
     protected void Page_Load(object sender, EventArgs e)
     {
+        //MasterPageType masterPage = (MasterPageType)page.Master;
+
         bookEntity = new BookshopEntities1();
         BusinessLogic bl = new BusinessLogic();
         List<Book> lstBook;
+
+        //string search;
+        ////search= (string)(Session["SearchItem"]);
+
+        //search =  Master.FindControl("txtSearch").ToString();
 
         try
         {
@@ -48,12 +56,5 @@ public partial class Main : System.Web.UI.Page
      "<script language='javascript'>alert('" + ex.Message + "');</script>");
         }
 
-    }
-
-
-    protected void btnSearch_Click(object sender, EventArgs e)
-    {
-        Session["SearchItem"] = Master.FindControl("txtSearch").ToString();
-        Response.Redirect("SearchResult.aspx");
     }
 }
