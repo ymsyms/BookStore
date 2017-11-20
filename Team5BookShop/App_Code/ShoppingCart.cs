@@ -25,7 +25,13 @@ public class ShoppingCart
     }
     public void Remove(int index)
     {
-        cart.Remove(cart[index]);
+        if(index > 0 && index < cart.Count)
+        {
+            if(cart[index] != null)
+            {
+                cart.Remove(cart[index]);
+            }
+        }
     }
     public List<CartItem> Cart
     {
