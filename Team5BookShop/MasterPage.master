@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <asp:Button ID="btnCart" runat="server" Text="Shopping Cart" OnClick="btnCart_Click" />
+                    <asp:Button ID="btnCart" runat="server" Text="Shopping Cart" />
                 </div>
                 <div class="col-md-2">
                     <asp:Button ID="btnSignIn" runat="server" Text="Sign In" />

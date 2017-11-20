@@ -19,9 +19,10 @@ public partial class _Default : System.Web.UI.Page
             bookId = Convert.ToInt32(val);
             bookItem = new BookBusinesslogic().GetBookDetails(bookId);
             Category cat = new BookBusinesslogic().GetCategory(bookItem.CategoryID);
+            Image Image2 = new Image();
             Image2.Width = 280;
             Image2.Height = 280;
-            Image2.ImageUrl = "images/" + bookItem.ISBN + ".jpg" ;
+            Image2.ImageUrl = "images/" + bookItem.ISBN + ".jpg";
             lblTitle.Text = bookItem.Title;
             lblCat.Text = Convert.ToString(cat.CategoryName);
             lblISBN.Text = bookItem.ISBN;
@@ -32,7 +33,8 @@ public partial class _Default : System.Web.UI.Page
 
     protected void BtnAddToCart_Click(object sender, EventArgs e)
     {
-
+        Session["Quantity"] = qty.Value.ToString();
+        Response.Redirect("ShoppingCart.aspx");
     }
 }
 
