@@ -67,7 +67,7 @@ public class BusinessLogic
             foreach (CartItem item in shoppingCart)
             {
                 OrderDetail orderDetail = new OrderDetail();
-                orderDetail.OrderID = ApplicationState[count];
+                orderDetail.OrderID = context.Orders.Max(x => x.OrderID);
                 orderDetail.BookID = item.BookID;
                 orderDetail.Quantity = item.Quantity;
                 orderDetail.UnitPrice = item.UnitPrice;
