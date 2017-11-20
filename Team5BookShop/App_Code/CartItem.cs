@@ -38,7 +38,7 @@ public class CartItem
         }
     }
 
-    public double UnitPrice
+    public decimal UnitPrice
     {
         get
         {
