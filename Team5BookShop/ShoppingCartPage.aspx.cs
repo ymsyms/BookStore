@@ -26,10 +26,10 @@ public partial class ShoppingCartPage : System.Web.UI.Page
         }
         else
         {
-            GridView gridview1 = new GridView();
+            
             var qry = userCart.Cart.Select(x => new { x.Title, x.UnitPrice, x.Quantity, x.SubTotal }).ToList();
-            gridview1.DataSource = qry;
-            gridview1.DataBind();
+            GridView1.DataSource = qry;
+            GridView1.DataBind();
         }
     }
 }
