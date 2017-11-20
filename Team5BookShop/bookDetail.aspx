@@ -4,11 +4,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container">
-        
         <div class="row">
             <div class="col-md-4">
+<<<<<<< HEAD
                 <div class ="row"><br /></div>
                 <asp:Image ID="Image2"  runat="server" ImageUrl="image"  />
+=======
+                <%--<asp:Image ID="Image2" runat="server" ImageUrl="images/<%# Eval("ISBN") %>.jpg" />--%>
+>>>>>>> 05e0276902731be906295eb7c973657093ebbb8d
             </div>
             <div class="col-md-8">
                 <div class ="row"><br /></div>
@@ -52,7 +55,7 @@
                         <asp:Label ID="lblQuantity" runat="server" Text="Quantity"></asp:Label>
                     </div>
                     <div class="col-md-5">
-                        <input type="number" id="qty" runat="server" min="0" />
+                        &nbsp;<input type="number" id="qty" runat="server" min="0" />
                     </div>
                 </div>
                 <div class ="row"><br /></div>
@@ -68,7 +71,7 @@
                 <div class ="row"><br /></div>
                 <div class="row">
                     <div class="col-md-3">
-                        <asp:Button ID="BtnAddToCart" runat="server" Text="Add To Cart" OnClick="BtnAddToCart_Click" />
+                        <asp:Button ID="BtnAddToCart" runat="server" Text="Add To Cart" />
                     </div>
                 </div>
             </div>
