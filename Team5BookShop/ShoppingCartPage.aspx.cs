@@ -9,6 +9,6 @@ public partial class ShoppingCartPage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        ShoppingCart userCart = (ShoppingCart)Session["ShoppingCartObj"];
     }
 }

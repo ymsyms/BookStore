@@ -8,10 +8,8 @@ using System.Web;
 /// </summary>
 public class ShoppingCart
 {
-
     List<CartItem> cart;
-
-
+    
     public void Add(Book book, int quantity)
     {
         if (book.Stock >= quantity)
@@ -25,6 +23,10 @@ public class ShoppingCart
     {
         cart.Clear();
     }
+    public void Remove(int index)
+    {
+        cart.Remove(cart[index]);
+    }
     public List<CartItem> Cart
     {
         get
@@ -33,9 +35,9 @@ public class ShoppingCart
         }
     }
 
-    public double TotalPrice()
+    public decimal TotalPrice()
     {
-        double totalPrice = 0;
+        decimal totalPrice = 0;
         foreach (CartItem cartItem in cart)
         {
             totalPrice += cartItem.SubTotal;

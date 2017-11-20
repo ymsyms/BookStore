@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using 
 
 /// <summary>
 /// Summary description for BusinessLogic
@@ -39,48 +38,39 @@ public class BusinessLogic
     //03 registration page methods (by inetmgr)
 
     //04 shopping cart page methods
-    //public static List<CartItem> GetShoppingCart()
+
+
+
+    //public static void Checkout(string userID, string mailingAddress, DateTime orderDate, decimal totalPrice, ShoppingCart shoppoingCart)
     //{
-    //    return shoppingCart;
+    //    using (BookshopEntities context = new BookshopEntities())
+    //    {
+    //        //Create Order
+    //        Order order = new Order();
+    //        order.UserID = userID;
+    //        order.MailingAddress = mailingAddress;
+    //        order.OrderDate = orderDate;
+    //        order.TotalPrice = totalPrice;
+    //        context.Orders.Add(order);
+    //        context.SaveChanges();
+
+    //        //Create OrderDetails from CartItems
+    //        foreach (CartItem item in shoppingCart)
+    //        {
+    //            OrderDetail orderDetail = new OrderDetail();
+    //            orderDetail.OrderID = context.Orders.Max(x => x.OrderID);
+    //            orderDetail.BookID = item.BookID;
+    //            orderDetail.Quantity = item.Quantity;
+    //            orderDetail.UnitPrice = item.UnitPrice;
+    //            orderDetail.SubTotalPrice = item.SubTotal;
+    //            context.OrderDetails.Add(orderDetail);
+    //        }
+    //        context.SaveChanges();
+
+    //        //Clear ShoppingCart
+    //        shoppingCart.Clear();
+    //    }
+
+
     //}
-
-    //EditCartItem (in CodeBehind)
-
-    //public static decimal GetShoppingCartTotalPrice()
-    //{
-    //    return shoppingCart.TotalPrice();
-    //}
-
-    public static void Checkout(short userID, string mailingAddress, DateTime orderDate, double totalPrice, ShoppingCart shoppingCart)
-    {
-        using (BookshopEntities context = new BookshopEntities())
-        {
-            //Create Order
-            Order order = new Order();
-            order.UserID = userID;
-            order.MailingAddress = mailingAddress;
-            order.OrderDate = orderDate;
-            order.TotalPrice = totalPrice;
-            context.Orders.Add(order);
-            context.SaveChanges();
-
-            //Create OrderDetails from CartItems
-            foreach (CartItem item in shoppingCart.Cart)
-            {
-                OrderDetail orderDetail = new OrderDetail();
-                orderDetail.OrderID = ApplicationState[count];
-                orderDetail.BookID = item.BookID;
-                orderDetail.Quantity = item.Quantity;
-                orderDetail.UnitPrice = item.UnitPrice;
-                orderDetail.SubTotalPrice = item.SubTotal;
-                context.OrderDetails.Add(orderDetail);
-            }
-            context.SaveChanges();
-
-            //Clear ShoppingCart
-            shoppingCart.Clear();
-        }
-
-
-    }
 }
