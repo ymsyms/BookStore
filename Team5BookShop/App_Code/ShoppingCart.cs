@@ -25,6 +25,13 @@ public class ShoppingCart
     {
         cart.Clear();
     }
+    public List<CartItem> Cart
+    {
+        get
+        {
+            return cart;
+        }
+    }
 
     public double TotalPrice()
     {
