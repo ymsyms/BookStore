@@ -73,4 +73,13 @@ public class BusinessLogic
 
 
     //}
+    public static List<string> GetCategoryList()
+    {
+        using (BookshopEntities context = new BookshopEntities())
+        {
+            List<string> catList = context.Categories.Select(x => x.CategoryName).ToList();
+            return catList;
+        }
+
+    }
 }
