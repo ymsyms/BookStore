@@ -21,6 +21,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     protected void btnSignOut_Click(object sender, EventArgs e)
     {
         Session["userId"] = null;
+        Session["userType"] = null;
         Response.Redirect("~/Main.aspx");
     }
 

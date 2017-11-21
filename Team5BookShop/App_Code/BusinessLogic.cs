@@ -159,12 +159,11 @@ public class BusinessLogic
             lblPrice.Text = lstBook[i].Price.ToString();
             ph.Controls.Add(lblPrice);
             ph.Controls.Add(new LiteralControl("  "));
-
+ 
             Button btnEdit = new Button();
             btnEdit.Text = "Edit";
-            btnEdit.PostBackUrl = "~/BookUpdate.aspx?ISBN=" + lstBook[i].ISBN;       
+            btnEdit.PostBackUrl = "~/BookUpdate.aspx?ISBN=" + lstBook[i].ISBN;
             
-
             ph.Controls.Add(btnEdit);
             ph.Controls.Add(new LiteralControl("  "));
 
@@ -175,5 +174,40 @@ public class BusinessLogic
                 j = 0;
             }
         }
+    }    
+    public void imageAssignForCustomer(List<Book> lstBook, PlaceHolder ph)
+    {
+        int j = 0;
+
+        for (int i = 0; i < lstBook.Count; i++)
+        {
+            ImageButton img = new ImageButton();
+            img.Width = 200;
+            img.Height = 200;
+            string imgName = lstBook[i].ISBN;
+            img.ImageUrl = "images/" + imgName + ".jpg";
+            ph.Controls.Add(img);
+            ph.Controls.Add(new LiteralControl("  "));
+
+            img.PostBackUrl = "~/bookDetail.aspx?BookID=" + imgName;
+
+            Label lblTitle = new Label();
+            lblTitle.Text = lstBook[i].Title.ToString();
+            ph.Controls.Add(lblTitle);
+            ph.Controls.Add(new LiteralControl("  "));
+
+            Label lblPrice = new Label();
+            lblPrice.Text = lstBook[i].Price.ToString();
+            ph.Controls.Add(lblPrice);
+            ph.Controls.Add(new LiteralControl("  "));
+
+            j++;
+            if (j == 3)
+            {
+                ph.Controls.Add(new LiteralControl("  "));
+                j = 0;
+            }
+        }
     }
+
 }
