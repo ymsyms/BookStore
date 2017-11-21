@@ -13,7 +13,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
         Response.Redirect("~/SearchResult.aspx");        
     }
 
-
     protected void btnSignIn_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/Login.aspx");

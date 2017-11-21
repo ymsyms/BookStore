@@ -21,6 +21,7 @@ public partial class BookRegistration : System.Web.UI.Page
 
     protected void btnAdd_Click(object sender, EventArgs e)
     {
+        //if(decimal.TryParse(txtPrice.Text))
         bbl = new BookBusinesslogic();
 
         string title = txtTitle.Text;
@@ -34,6 +35,8 @@ public partial class BookRegistration : System.Web.UI.Page
             Label1.Text = "Successful";
         else
             Label1.Text = "Error";
+
+        
 
     }
 }
