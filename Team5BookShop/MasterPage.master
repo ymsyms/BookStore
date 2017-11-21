@@ -16,7 +16,7 @@
     <form id="form1" runat="server">
         <div class="wrapper">
             <div class="header row">
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/images/bookstore-logo.jpg" class="logo" />
+                <asp:ImageButton ID="Image1" runat="server"  ImageUrl="~/images/bookstore-logo.jpg" class="logo" PostBackUrl="~/Main.aspx"  />
             </div>
             <div class="menu row">
                 <div class="col-md-4">
