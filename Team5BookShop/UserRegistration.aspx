@@ -16,5 +16,6 @@
     <asp:comparevalidator runat="server" errormessage="The passwords do not match" ControlToCompare="txtPassword" ControlToValidate="txtPasswordConfirmation"></asp:comparevalidator>
     <br />
     <asp:button runat="server" text="Submit" OnClick="Unnamed7_Click" />
+    <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 </asp:Content>
 
