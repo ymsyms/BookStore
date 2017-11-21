@@ -63,7 +63,9 @@ public partial class Order
     public Nullable<System.DateTime> OrderDate { get; set; }
     public string MailingAddress { get; set; }
     public Nullable<double> TotalPrice { get; set; }
-    public Nullable<short> UserID { get; set; }
+    public int UserID { get; set; }
+
+    public virtual User User { get; set; }
 }
 
 public partial class OrderDetail
@@ -73,4 +75,21 @@ public partial class OrderDetail
     public Nullable<short> Quantity { get; set; }
     public Nullable<double> UnitPrice { get; set; }
     public Nullable<double> SubtotalPrice { get; set; }
+}
+
+public partial class User
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public User()
+    {
+        this.Orders = new HashSet<Order>();
+    }
+
+    public int UserID { get; set; }
+    public string UserName { get; set; }
+    public string Password { get; set; }
+    public string UserType { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<Order> Orders { get; set; }
 }

@@ -11,7 +11,7 @@ public class BookBusinesslogic
 {
     Book book;
     int catId;
-    BookshopEntities1 be;
+    BookshopEntities be;
     Category category;
 
     public BookBusinesslogic()
@@ -21,7 +21,7 @@ public class BookBusinesslogic
 
     public Book GetBookDetails(string id)
     {
-        using (BookshopEntities1 bookEntity = new BookshopEntities1())
+        using (BookshopEntities bookEntity = new BookshopEntities())
         {
             book = (from bk in bookEntity.Books
                     where bk.ISBN == id
@@ -33,7 +33,7 @@ public class BookBusinesslogic
     }
     public Category GetCategory(int catId)
     {
-        using (BookshopEntities1 category = new BookshopEntities1())
+        using (BookshopEntities category = new BookshopEntities())
         {
             Category catgry = (from ct in category.Categories
                                where ct.CategoryID == catId
@@ -44,7 +44,7 @@ public class BookBusinesslogic
 
     public bool AddBook(string title, string cat, string isbn, string author, int stock, decimal price)
     {
-        be = new BookshopEntities1();
+        be = new BookshopEntities();
         book = new Book();
         category = new Category();
 

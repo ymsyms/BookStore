@@ -45,4 +45,13 @@
     width : 80%;
     height : 1000px;
     border : 1px solid #808080;
+    padding: 10% 0 0 3%;
+}
+.contentMenu
+{
+    height : 30px;
+    padding : 3% 0% 0% 5%;
+}
+.homeMenu{
+    margin : 3% 0 0 3%;
 }

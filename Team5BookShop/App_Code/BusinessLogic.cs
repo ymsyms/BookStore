@@ -14,7 +14,7 @@ public class BusinessLogic
     //01 homepage methods
     public List<Book> GetAllBooks()
     {
-        using (BookshopEntities1 context = new BookshopEntities1())
+        using (BookshopEntities context = new BookshopEntities())
         {
             return context.Books.ToList<Book>();
         }
@@ -22,7 +22,7 @@ public class BusinessLogic
 
     public List<Book> GetBooksByTitle(string title)
     {
-        using (BookshopEntities1 context = new BookshopEntities1())
+        using (BookshopEntities context = new BookshopEntities())
         {
             return context.Books.Where(book => book.Title.Contains(title)).ToList<Book>();
         }
@@ -30,7 +30,7 @@ public class BusinessLogic
 
     public List<Book> GetBooksByCategoryID(int categoryID)
     {
-        using (BookshopEntities1 context = new BookshopEntities1())
+        using (BookshopEntities context = new BookshopEntities())
         {
             return context.Books.Where(book => book.CategoryID == categoryID).ToList<Book>();
         }
@@ -78,7 +78,7 @@ public class BusinessLogic
     //}
     public List<string> GetCategoryList()
     {
-        using (BookshopEntities1 context = new BookshopEntities1())
+        using (BookshopEntities context = new BookshopEntities())
         {
             List<string> catList = context.Categories.Select(x => x.CategoryName).ToList();
             return catList;

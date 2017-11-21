@@ -11,10 +11,10 @@ using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 
-public partial class BookshopEntities1 : DbContext
+public partial class BookshopEntities : DbContext
 {
-    public BookshopEntities1()
-        : base("name=BookshopEntities1")
+    public BookshopEntities()
+        : base("name=BookshopEntities")
     {
     }
 
@@ -28,4 +28,5 @@ public partial class BookshopEntities1 : DbContext
     public virtual DbSet<Discount> Discounts { get; set; }
     public virtual DbSet<Order> Orders { get; set; }
     public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+    public virtual DbSet<User> Users { get; set; }
 }

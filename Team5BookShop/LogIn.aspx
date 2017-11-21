@@ -9,7 +9,8 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:Login ID="Login1" runat="server" CssClass="auto-style1" Height="219px" Width="304px">
-    </asp:Login>
+    
+    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    
 </asp:Content>
 
