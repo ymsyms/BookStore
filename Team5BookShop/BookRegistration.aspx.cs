@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 public partial class BookRegistration : System.Web.UI.Page
 {
@@ -17,26 +18,61 @@ public partial class BookRegistration : System.Web.UI.Page
         {
             ddlistCat.Items.Add(cat[i]);
         }
+
+       
     }
 
     protected void btnAdd_Click(object sender, EventArgs e)
-    {
-        //if(decimal.TryParse(txtPrice.Text))
-        bbl = new BookBusinesslogic();
-
-        string title = txtTitle.Text;
-        string cat = ddlistCat.SelectedItem.ToString();
-        string isbn = txtISBN.Text;
-        string author = txtAuthor.Text;
-        int stock = Convert.ToInt32(bookStock.Value);
-        decimal price = Convert.ToDecimal(txtPrice.Text);
-
-        if (bbl.AddBook(title, cat, isbn, author, stock, price))
-            Label1.Text = "Successful";
+    {        
+        if(bookStock.Value == "")
+        {
+            lblStock.Text = "Value cannot be empty";
+        }
         else
-            Label1.Text = "Error";
+        {
+            if (FileUpload1.HasFile)
+            {
+                bbl = new BookBusinesslogic();
 
-        
+                string title = txtTitle.Text;
+                string cat = ddlistCat.SelectedValue.ToString();
+                string isbn = txtISBN.Text;
+                string author = txtAuthor.Text;
+                int stock = Convert.ToInt32(bookStock.Value);
+                decimal price = Convert.ToDecimal(txtPrice.Text);
 
+                try
+                {
+                    FileUpload1.SaveAs(Server.MapPath("~/images/") + isbn + ".jpg");
+                }
+                catch(Exception ex)
+                {
+                    ClientScript.RegisterStartupScript(Page.GetType(),
+       "MessageBox",
+       "<script language='javascript'>alert('"+ex.Message+"');</script>");
+
+                }               
+
+                if (bbl.AddBook(title, cat, isbn, author, stock, price))
+                {
+                    ClientScript.RegisterStartupScript(Page.GetType(),
+       "MessageBox",
+       "<script language='javascript'>alert('Adding Book Successful!');</script>");
+                    Response.Redirect("Main.aspx");
+                } 
+                else
+                {
+                    ClientScript.RegisterStartupScript(Page.GetType(),
+       "MessageBox",
+       "<script language='javascript'>alert('Error!');</script>");
+                }   
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(Page.GetType(),
+    "MessageBox",
+    "<script language='javascript'>alert('Please upload Image!');</script>");
+            }            
+        }       
     }
 }

@@ -60,11 +60,58 @@ public class BookBusinesslogic
             book.CategoryID = c;
 
             be.Books.Add(book);
+
+            be.SaveChanges();
+
+
             return true;
         }
         catch (Exception ex)
         {
             return false;
         }
-    }    
+    }
+
+    public bool DeleteBook(string isbn)
+    {
+        try
+        {
+            be = new BookshopEntities();
+            Book b = be.Books.Where(x => x.ISBN == isbn).First();
+            be.Books.Remove(b);
+            be.SaveChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            return false;
+        }
+    }
+
+    public void UpdateBook(string isbn, string bookCategory, string title, string author, string price, string stock, string discountCode)
+    {
+        using (BookshopEntities context = new BookshopEntities())
+        {
+            Book b = context.Books.Where(x => x.ISBN == isbn).First();
+            b.CategoryID = context.Categories.Where(x => x.CategoryName == bookCategory).Select(y => y.CategoryID).First();
+            b.Title = title;
+            b.Author = author;
+            decimal newPrice;
+            bool validPrice = Decimal.TryParse(price, out newPrice);
+            int newStock;
+            bool validStock = Int32.TryParse(stock, out newStock);
+            int newDiscountCode;
+            bool validDiscountCode = Int32.TryParse(discountCode, out newDiscountCode);
+            if (validDiscountCode == true)
+            {
+                validDiscountCode = newDiscountCode > 0 ? true : false;
+            }
+            if (validPrice && validStock && validDiscountCode)
+            {
+                b.Price = newPrice;
+                b.Stock = newStock;
+                context.SaveChanges();
+            }
+        }
+    }
 }

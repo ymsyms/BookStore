@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server" >
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server" >    
     <style>
         .errorAlert {
             font: bold;
@@ -13,7 +13,14 @@
         }
     </style>
     <div class="container bookRegister">
-        <div class="row">
+        <div class="row">            
+            <div class="col-md-2">                
+                Image Upload: 
+            </div>
+            <div class="col-md-10">
+                <asp:FileUpload ID="FileUpload1" runat="server" />
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="FileUpload1" ErrorMessage="Invalid Image Type" ForeColor="Red" ValidationExpression="^([0-9a-zA-Z_\-~ :\\])+(.jpg|.JPG|.jpeg|.JPEG|.bmp|.BMP|.gif|.GIF|.png|.PNG)$"></asp:RegularExpressionValidator>
+            </div>
             <div class="col-md-12">
                 <br />
             </div>
@@ -66,16 +73,17 @@
             <div class="col-md-10">
                 <asp:TextBox ID="txtPrice" runat="server" Width="199px"></asp:TextBox>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Value cannot be empty" CssClass="errorAlert" ControlToValidate="txtPrice"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPrice" ErrorMessage="Please enter an amount in the correct format" ForeColor="Red" ValidationExpression="^\d+([,\.]\d{1,2})?$"></asp:RegularExpressionValidator>
             </div>
             <div class="col-md-12">
                 <br />
             </div>
-
             <div class="col-md-2">
                 Book Stock:
             </div>
             <div class="col-md-10">
-                <input type="number" id="bookStock" runat="server" min="0" class="auto-style1" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="number" id="bookStock" runat="server" min="1" class="auto-style1" value="1" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="lblStock" runat="server" ForeColor="Red"></asp:Label>
                 </div>
             <div class="col-md-12">
                 <br />
@@ -93,7 +101,7 @@
                 <asp:Button ID="btnAdd" runat="server" Text="Submit" OnClick="btnAdd_Click" />
             </div>  
             <div class="col-md-12"          >
-                <asp:Label ID="Label1" runat="server"></asp:Label>
+                <asp:Label ID="Label1" runat="server" ForeColor="Green"></asp:Label>
             </div>
         </div>
     </div>

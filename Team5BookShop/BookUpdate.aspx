@@ -16,6 +16,7 @@
     <div class="container bookRegister">
         <div class="row">
             <div class="col-md-12">
+                <asp:Image ID="Image2" runat="server" />
                 <br />
             </div>
             <div class="col-md-4">
@@ -67,6 +68,8 @@
             <div class="col-md-8">
                 <asp:TextBox ID="txtPrice" runat="server" Width="199px"></asp:TextBox>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Value cannot be empty" CssClass="errorAlert" ControlToValidate="txtPrice"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPrice" ErrorMessage="Please enter an amount in the correct format" ForeColor="Red" ValidationExpression="^\d+([,\.]\d{1,2})?$"></asp:RegularExpressionValidator>
+
             </div>
             <div class="col-md-12">
                 <br />
@@ -77,6 +80,7 @@
             </div>
             <div class="col-md-8">
                 <input type="number" id="bookStock" runat="server" min="0" class="auto-style1" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="lblStock" runat="server" ForeColor="Red"></asp:Label>
                 </div>
             <div class="col-md-12">
                 <br />
@@ -91,7 +95,8 @@
                 <br />
             </div>
             <div class="col-md-12 bookRegister">
-                <asp:Button ID="btnAdd" runat="server" Text="Submit" />
+                <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" /> &nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
             </div>   
         </div>
     </div>

@@ -51,7 +51,7 @@
                         <asp:Label ID="lblQuantity" runat="server" Text="Quantity"></asp:Label>
                     </div>
                     <div class="col-md-3">
-                        <input type="number" id="qty" runat="server" min="0" />
+                        <input type="number" id="qty" runat="server" min="1" value="1" />
                     </div>
                     <div class="col-md-3">
                      <asp:Label ID="Label1" runat="server" Text="" ForeColor="#CC3300" Font-Bold="True"></asp:Label>
