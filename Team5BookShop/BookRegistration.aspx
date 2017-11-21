@@ -4,15 +4,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server" >    
     <style>
-        .errorAlert {
-            font: bold;
-            color: red;
-        }
-        .auto-style1 {
-            width: 201px;
-        }
+
     </style>
     <div class="container bookRegister">
+
         <div class="row">            
             <div class="col-md-2">                
                 Image Upload: 
@@ -98,7 +93,7 @@
                 <br />
             </div>
             <div class="col-md-12 bookRegister">
-                <asp:Button ID="btnAdd" runat="server" Text="Submit" OnClick="btnAdd_Click" />
+                <asp:Button ID="btnAdd" runat="server" Text="Submit" OnClick="btnAdd_Click" class="btn btn-primary" />
             </div>  
             <div class="col-md-12"          >
                 <asp:Label ID="Label1" runat="server" ForeColor="Green"></asp:Label>

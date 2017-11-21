@@ -26,7 +26,15 @@ public partial class LogIn : System.Web.UI.Page
             Session["userType"] = user.UserType;
 
             Label3.Text = "Success User";
-            Response.Redirect("~/Main.aspx");
+           
+            if (Session["Url"].Equals("http://localhost:65213/ShoppingCartPage.aspx"))
+            {
+                Response.Redirect("~/OrderReceipt.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/Main.aspx");
+            }
         }
         else
         {
