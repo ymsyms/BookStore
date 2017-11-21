@@ -136,77 +136,122 @@ public class BusinessLogic
 
     public void imageAssign(List<Book> lstBook, PlaceHolder ph)
     {
-        int j = 0;
+        Table t = new Table();
 
         for (int i = 0; i < lstBook.Count; i++)
         {
+            //dynamic table row
+            TableRow tr1 = new TableRow();
+
+            //column for image
+            TableCell tc1 = new TableCell();
+            tc1.Width = 200;
+
             ImageButton img = new ImageButton();
             img.Width = 200;
             img.Height = 200;
             string imgName = lstBook[i].ISBN;
             img.ImageUrl = "images/" + imgName + ".jpg";
-            ph.Controls.Add(img);
-            ph.Controls.Add(new LiteralControl("  "));
 
+            tc1.Controls.Add(img);
+            tr1.Cells.Add(tc1);
             img.PostBackUrl = "~/bookDetail.aspx?BookID=" + imgName;
+
+
+            //column for title
+            TableCell tc2 = new TableCell();
+            tc2.Width = 400;
 
             Label lblTitle = new Label();
             lblTitle.Text = lstBook[i].Title.ToString();
-            ph.Controls.Add(lblTitle);
-            ph.Controls.Add(new LiteralControl("  "));
 
-            Label lblPrice = new Label();
+            tc2.Controls.Add(lblTitle);
+            tr1.Cells.Add(tc2);
+
+            //column for price
+            TableCell tc3 = new TableCell();
+            tc3.Width = 200;
+
+            Label lblPrice = new Label();            
             lblPrice.Text = lstBook[i].Price.ToString();
-            ph.Controls.Add(lblPrice);
-            ph.Controls.Add(new LiteralControl("  "));
- 
+
+            tc3.Controls.Add(lblPrice);
+            tr1.Cells.Add(tc3);
+
+            //column for edit book button   
+            TableCell tc4 = new TableCell();
+            tc4.Width = 200;
+
             Button btnEdit = new Button();
             btnEdit.Text = "Edit";
             btnEdit.PostBackUrl = "~/BookUpdate.aspx?ISBN=" + lstBook[i].ISBN;
-            
-            ph.Controls.Add(btnEdit);
-            ph.Controls.Add(new LiteralControl("  "));
 
-            j++;
-            if (j == 3)
-            {
-                ph.Controls.Add(new LiteralControl("  "));
-                j = 0;
-            }
-        }
-    }    
+            tc4.Controls.Add(btnEdit);
+            tr1.Cells.Add(tc4);
+
+            //add to control panel
+            t.Rows.Add(tr1);
+            ph.Controls.Add(t);
+        }       
+    }
     public void imageAssignForCustomer(List<Book> lstBook, PlaceHolder ph)
-    {
-        int j = 0;
+    {  
+        Table t = new Table();
 
         for (int i = 0; i < lstBook.Count; i++)
         {
+            //dynamic table row
+            TableRow tr1 = new TableRow();
+
+            //column for image
+            TableCell tc1 = new TableCell();
+            tc1.Width = 200;
+            
             ImageButton img = new ImageButton();
             img.Width = 200;
             img.Height = 200;
             string imgName = lstBook[i].ISBN;
             img.ImageUrl = "images/" + imgName + ".jpg";
-            ph.Controls.Add(img);
-            ph.Controls.Add(new LiteralControl("  "));
 
+            tc1.Controls.Add(img);
+            tr1.Cells.Add(tc1);
             img.PostBackUrl = "~/bookDetail.aspx?BookID=" + imgName;
+
+            
+            //column for title
+            TableCell tc2 = new TableCell();
+            tc2.Width = 400;
 
             Label lblTitle = new Label();
             lblTitle.Text = lstBook[i].Title.ToString();
-            ph.Controls.Add(lblTitle);
-            ph.Controls.Add(new LiteralControl("  "));
+
+            tc2.Controls.Add(lblTitle);
+            tr1.Cells.Add(tc2);
+
+            //column for price
+            TableCell tc3 = new TableCell();
+            tc3.Width = 200;
 
             Label lblPrice = new Label();
             lblPrice.Text = lstBook[i].Price.ToString();
-            ph.Controls.Add(lblPrice);
-            ph.Controls.Add(new LiteralControl("  "));
 
-            j++;
-            if (j == 3)
-            {
-                ph.Controls.Add(new LiteralControl("  "));
-                j = 0;
-            }
+            tc3.Controls.Add(lblPrice);
+            tr1.Cells.Add(tc3);
+                    
+            //column for view detail button    
+            TableCell tc4 = new TableCell();
+            tc4.Width = 200;
+
+            Button btnViewDetail = new Button();
+            btnViewDetail.Text = "View Detail";
+            btnViewDetail.PostBackUrl = "~/bookDetail.aspx?BookID=" + imgName;
+
+            tc4.Controls.Add(btnViewDetail);
+            tr1.Cells.Add(tc4);          
+
+            //add to control panel
+            t.Rows.Add(tr1);
+            ph.Controls.Add(t);
         }
     }
 
