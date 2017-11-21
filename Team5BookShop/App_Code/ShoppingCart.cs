@@ -48,7 +48,7 @@ public class ShoppingCart
     }
     public void Remove(int index)
     {
-        if(index > 0 && index < cart.Count)
+        if(index >= 0 && index < cart.Count)
         {
             if(cart[index] != null)
             {
