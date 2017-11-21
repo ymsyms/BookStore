@@ -22,6 +22,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         Session["userId"] = null;
         Session["userType"] = null;
+        Session["ShoppingCartObj"] = new ShoppingCart();
         Response.Redirect("~/Main.aspx");
     }
 

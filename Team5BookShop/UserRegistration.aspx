@@ -28,7 +28,7 @@
     <asp:comparevalidator runat="server" errormessage="The passwords do not match" ControlToCompare="txtPassword" ControlToValidate="txtPasswordConfirmation" ValidationGroup="valGroup"></asp:comparevalidator>
     <br />
     <br />
-    <asp:button runat="server" text="Sign Up" OnClick="Unnamed7_Click" ValidationGroup="valGroup" CssClass="RegistrationButton"  />
+    <asp:button runat="server" text="Sign Up" OnClick="Unnamed7_Click" ValidationGroup="valGroup" CssClass="RegistrationButton"  class="btn btn-primary"/>
     <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 </asp:Content>
 

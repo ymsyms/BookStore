@@ -46,12 +46,12 @@ public partial class ShoppingCartPage : System.Web.UI.Page
     {
         if (Session["UserID"] == null)
         {
-            string url = HttpContext.Current.Request.Url.AbsoluteUri;
+            Session["Url"] = HttpContext.Current.Request.Url.AbsoluteUri;
             Response.Redirect("~/LogIn.aspx");
         }
         else
         {
-            string url = HttpContext.Current.Request.Url.AbsoluteUri;
+            Session["Url"] = HttpContext.Current.Request.Url.AbsoluteUri;
             Response.Redirect("~/OrderReceipt.aspx");
         }
     }
