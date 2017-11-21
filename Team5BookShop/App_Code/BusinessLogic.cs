@@ -77,7 +77,7 @@ public class BusinessLogic
 
     //}
 
-    public void Checkout(string userID, string mailingAddress, DateTime orderDate, decimal totalPrice, ShoppingCart shoppingCart)
+    public bool Checkout(string userID, string mailingAddress, DateTime orderDate, decimal totalPrice, ShoppingCart shoppingCart)
     {
         using (BookshopEntities context = new BookshopEntities())
         {
@@ -92,24 +92,36 @@ public class BusinessLogic
 
             if (validUserID)
             {
-                order.UserID = userIDHolder;
-                context.Orders.Add(order);
-                context.SaveChanges();
-
-                //Create OrderDetails from CartItems
-                foreach (CartItem item in shoppingCart.Cart)
+                try
                 {
-                    OrderDetail orderDetail = new OrderDetail();
-                    orderDetail.BookID = Convert.ToInt16(item.BookID);
-                    orderDetail.Quantity = Convert.ToInt16(item.Quantity);
-                    orderDetail.UnitPrice = Convert.ToDouble(item.UnitPrice);
-                    orderDetail.SubtotalPrice = Convert.ToDouble(item.SubTotal);
-                    context.OrderDetails.Add(orderDetail);
-                }
-                context.SaveChanges();
+                    order.UserID = userIDHolder;
+                    context.Orders.Add(order);
+                    context.SaveChanges();
 
-                //Clear ShoppingCart
-                shoppingCart.Clear();
+                    //Create OrderDetails from CartItems
+                    foreach (CartItem item in shoppingCart.Cart)
+                    {
+                        OrderDetail orderDetail = new OrderDetail();
+                        orderDetail.BookID = Convert.ToInt16(item.BookID);
+                        orderDetail.Quantity = Convert.ToInt16(item.Quantity);
+                        orderDetail.UnitPrice = Convert.ToDouble(item.UnitPrice);
+                        orderDetail.SubtotalPrice = Convert.ToDouble(item.SubTotal);
+                        context.OrderDetails.Add(orderDetail);
+                    }
+                    context.SaveChanges();
+
+                    //Clear ShoppingCart
+                    shoppingCart.Clear();
+                    return true;
+                }
+                catch(Exception e)
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
             }
         }
     }
