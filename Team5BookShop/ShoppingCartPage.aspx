@@ -25,7 +25,7 @@
                 </Columns>
             </asp:GridView>
             <asp:Button ID="UpdateBtn" runat="server" Text="Update" />
-            <asp:Button ID="CheckoutBtn" runat="server" Text="Checkout" />
+            <asp:Button ID="CheckoutBtn" runat="server" Text="Checkout" OnClick="CheckoutBtn_Click" />
         </asp:Panel>
     </div>
 </asp:Content>

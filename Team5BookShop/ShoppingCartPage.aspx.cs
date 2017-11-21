@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 public partial class ShoppingCartPage : System.Web.UI.Page
 {
     ShoppingCart userCart;
+    BookshopEntities bk = new BookshopEntities();
     protected void Page_Load(object sender, EventArgs e)
     {
         userCart = (ShoppingCart)Session["ShoppingCartObj"];
@@ -17,6 +18,8 @@ public partial class ShoppingCartPage : System.Web.UI.Page
             emptyCartLabel.Text = "Your Shopping Cart is Empty";
             Panel1.Controls.Add(emptyCartLabel);
             GridView1.Visible = false;
+            CheckoutBtn.Visible = false;
+            UpdateBtn.Visible = false;
         }
         else
         {
@@ -34,6 +37,20 @@ public partial class ShoppingCartPage : System.Web.UI.Page
             GridView1.DataBind();
             Session["ShoppingCartObj"] = userCart;
             Response.Redirect("~/ShoppingCartPage.aspx");
+        }
+    }
+
+    protected void CheckoutBtn_Click(object sender, EventArgs e)
+    {
+        if (Session["UserID"] == null)
+        {
+            string url = HttpContext.Current.Request.Url.AbsoluteUri;
+            Response.Redirect("~/LogIn.aspx");
+        }
+        else
+        {
+            string url = HttpContext.Current.Request.Url.AbsoluteUri;
+            Response.Redirect("~/OrderReceipt.aspx");
         }
     }
 }
