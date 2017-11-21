@@ -88,7 +88,7 @@ public class BookBusinesslogic
         }
     }
 
-    public void UpdateBook(string isbn, string bookCategory, string title, string author, string price, string stock, string discountCode)
+    public void UpdateBook(string isbn, string bookCategory, string title, string author, string price, string stock)
     {
         using (BookshopEntities context = new BookshopEntities())
         {
@@ -100,16 +100,12 @@ public class BookBusinesslogic
             bool validPrice = Decimal.TryParse(price, out newPrice);
             int newStock;
             bool validStock = Int32.TryParse(stock, out newStock);
-            int newDiscountCode;
-            bool validDiscountCode = Int32.TryParse(discountCode, out newDiscountCode);
-            if (validDiscountCode == true)
-            {
-                validDiscountCode = newDiscountCode > 0 ? true : false;
-            }
-            if (validPrice && validStock && validDiscountCode)
+            
+            if (validPrice && validStock)
             {
                 b.Price = newPrice;
                 b.Stock = newStock;
+                
                 context.SaveChanges();
             }
         }
