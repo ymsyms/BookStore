@@ -30,6 +30,7 @@
     clear : both;
     width : 100%;
     height :auto;
+    
 }
 .left-col
 {
@@ -37,15 +38,15 @@
     border: 1px solid #d0d0d0;
     border-top: 0px;
     width : 20%;
-    border : 1px solid #808080;
-    padding: 1% 0 0 3%;
+    border : 1px solid #808080; 
+    padding: 1% 0 5% 3%;
 }
 .right-col
 {
     float : left;
     width : 80%;
     border : 1px solid #808080;
-    padding: 1% 0 0 3%;
+    padding: 1% 0 5% 3%;
 }
 .contentMenu
 {

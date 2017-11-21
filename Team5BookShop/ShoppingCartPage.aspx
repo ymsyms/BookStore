@@ -21,17 +21,11 @@
                         <ItemStyle HorizontalAlign="Right" />
                     </asp:BoundField>
 
-                    <asp:TemplateField HeaderText="Delete Item">
-                        <ItemTemplate>
-                            <asp:Button runat="server" Text="Delete" CommandName="DeleteCartItem" CommandArgument="<%#((GridViewRow) Container).RowIndex %>"/>
-                        </ItemTemplate>
-
-                    </asp:TemplateField>
-
                     <asp:ButtonField HeaderText="Delete Items" Text="Delete" CommandName="DeleteCartItem" ButtonType="Button" />
-
                 </Columns>
             </asp:GridView>
+            <asp:Button ID="UpdateBtn" runat="server" Text="Update" />
+            <asp:Button ID="CheckoutBtn" runat="server" Text="Checkout" />
         </asp:Panel>
     </div>
 </asp:Content>
