@@ -33,7 +33,7 @@
                     <asp:Button ID="btnCart" runat="server" Text="Shopping Cart" />
                 </div>
                 <div class="col-md-2">
-                    <asp:Button ID="btnSignIn" runat="server" Text="Sign In" />
+                    <asp:Button ID="btnSignIn" runat="server" Text="Sign In" OnClick="btnSignIn_Click" />
                 </div>
 
                 <div class="col-md-2">
@@ -52,9 +52,14 @@
                     <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=4">Technical</asp:HyperLink>
                 </div>
                 <div class="right-col">
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <div class="contentMenu">
+                        <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Main.aspx" CssClass="homeMenu">Home</asp:HyperLink>
+                    </div>
+                    <div class="contentMain">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                         <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
                     </asp:ContentPlaceHolder>
+                    </div>
                 </div>
             </div>
         </div>
