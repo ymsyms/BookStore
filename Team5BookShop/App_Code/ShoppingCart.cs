@@ -9,13 +9,23 @@ using System.Web;
 public class ShoppingCart
 {
     List<CartItem> cart;
-    
-    public void Add(Book book, int quantity)
+
+    public ShoppingCart()
+    {
+        cart = new List<CartItem>();
+    }
+
+    public bool Add(Book book, int quantity)
     {
         if (book.Stock >= quantity)
         {
             CartItem newItem = new CartItem(book, quantity);
             cart.Add(newItem);
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
@@ -25,7 +35,13 @@ public class ShoppingCart
     }
     public void Remove(int index)
     {
-        cart.Remove(cart[index]);
+        if(index > 0 && index < cart.Count)
+        {
+            if(cart[index] != null)
+            {
+                cart.Remove(cart[index]);
+            }
+        }
     }
     public List<CartItem> Cart
     {

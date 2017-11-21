@@ -7,8 +7,10 @@ using System.Web.UI.WebControls;
 
 public partial class MasterPage : System.Web.UI.MasterPage
 {
-    protected void Page_Load(object sender, EventArgs e)
+    protected void btnSearch_Click(object sender, EventArgs e)
     {
-
+        Session["SearchItem"] = txtSearch.Value.ToString();
+        Response.Redirect("~/SearchResult.aspx");        
     }
+    
 }

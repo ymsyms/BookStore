@@ -5,27 +5,26 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Main : System.Web.UI.Page
+public partial class SearchCategoryResult : System.Web.UI.Page
 {
-    BookshopEntities1 bookEntity;
     protected void Page_Load(object sender, EventArgs e)
     {
-        bookEntity = new BookshopEntities1();
-        BusinessLogic bl = new BusinessLogic();
-        List<Book> lstBook;
+        int key = Convert.ToInt32(Request.QueryString[0].ToString());
+        BusinessLogic b1 = new BusinessLogic();
+        List<Book> bookList = new List<Book>();
 
         try
         {
-            lstBook = bl.GetAllBooks();
+            bookList = b1.GetBooksByCategoryID(key);
 
             int j = 0;
 
-            for (int i = 0; i < lstBook.Count; i++)
+            for (int i = 0; i < bookList.Count; i++)
             {
                 Image img = new Image();
                 img.Width = 280;
                 img.Height = 280;
-                string imgName = lstBook[i].ISBN;
+                string imgName = bookList[i].ISBN;
                 img.ImageUrl = "images/" + imgName + ".jpg";
                 PlaceHolder1.Controls.Add(img);
 
@@ -47,13 +46,5 @@ public partial class Main : System.Web.UI.Page
      "MessageBox",
      "<script language='javascript'>alert('" + ex.Message + "');</script>");
         }
-
-    }
-
-
-    protected void btnSearch_Click(object sender, EventArgs e)
-    {
-        Session["SearchItem"] = Master.FindControl("txtSearch").ToString();
-        Response.Redirect("SearchResult.aspx");
     }
 }

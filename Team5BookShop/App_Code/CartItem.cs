@@ -8,11 +8,11 @@ using System.Web;
 /// </summary>
 public class CartItem
 {
-    
-        string title;
-        int quantity;
-        decimal unitPrice;
-        int bookID;
+
+    string title;
+    int quantity;
+    decimal unitPrice;
+    int bookID;
 
     public CartItem(Book book, int quantity)
     {
