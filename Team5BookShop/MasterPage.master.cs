@@ -43,6 +43,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
             {
                 btnAddBook.Visible = true;
             }
+            else
+            {
+                btnAddBook.Visible = false;
+            }
         }
     }
     protected void btnSignUp_Click(object sender, EventArgs e)
