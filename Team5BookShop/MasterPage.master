@@ -31,17 +31,14 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-6">
                     <asp:Button ID="btnCart" runat="server" Text="Shopping Cart" class="SubheaderButton" OnClick="btnCart_Click"/>
-                </div>
-                <div class="col-md-2">
                     <asp:Button ID="btnSignIn" runat="server" Text="Sign In" OnClick="btnSignIn_Click" class="SubheaderButton"/>
-                                       <asp:Button ID="btnAddBook" runat="server" Text="Register Book" class="SubheaderButton" OnClick="btnAddBook_Click"/>
-                </div>
-
-                <div class="col-md-2">
+                    <asp:Button ID="btnAddBook" runat="server" Text="Register Book" class="SubheaderButton" OnClick="btnAddBook_Click"/>
                     <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" class="SubheaderButton" OnClick="btnSignUp_Click"/>
-                     <asp:Button ID="btnSignOut" runat="server" Text="Sign Out" OnClick="btnSignOut_Click" class="SubheaderButton"/>
+                    <asp:Button ID="btnSignOut" runat="server" Text="Sign Out" OnClick="btnSignOut_Click" class="SubheaderButton"/>
                 </div>
             </div>
 
