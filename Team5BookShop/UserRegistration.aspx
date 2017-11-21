@@ -14,18 +14,21 @@
     <asp:textbox ID="txtUserName" runat="server"></asp:textbox>
     <asp:requiredfieldvalidator runat="server" errormessage="User Name cannot be empty" ControlToValidate="txtUserName" ValidationGroup="valGroup">*Required</asp:requiredfieldvalidator>
     <br />
+    <br />
     <%--&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp--%>
     <asp:label runat="server" text="Password: "></asp:label>
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <asp:textbox ID="txtPassword" runat="server" TextMode="Password"></asp:textbox>
     <asp:requiredfieldvalidator runat="server" errormessage="Password cannot be empty" ControlToValidate="txtPassword" ValidationGroup="valGroup">*Required</asp:requiredfieldvalidator>
     <br />
+    <br />
     <%--&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp--%>
     <asp:label runat="server" text="Re-enter password: "></asp:label>
     <asp:textbox ID="txtPasswordConfirmation" runat="server" TextMode="Password"></asp:textbox>
     <asp:comparevalidator runat="server" errormessage="The passwords do not match" ControlToCompare="txtPassword" ControlToValidate="txtPasswordConfirmation" ValidationGroup="valGroup"></asp:comparevalidator>
     <br />
-    <asp:button runat="server" text="Sign Up" OnClick="Unnamed7_Click" ValidationGroup="valGroup" />
+    <br />
+    <asp:button runat="server" text="Sign Up" OnClick="Unnamed7_Click" ValidationGroup="valGroup" CssClass="RegistrationButton"  class="btn btn-primary"/>
     <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 </asp:Content>
 

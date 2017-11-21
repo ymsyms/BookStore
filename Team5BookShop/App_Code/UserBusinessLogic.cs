@@ -35,6 +35,20 @@ public class UserBusinessLogic
             }
         }
     }
+    public bool UserVerification(string userName)
+    {     //Checks if user name exists
+        using (BookshopEntities context = new BookshopEntities())
+        {
+            if(context.Users.Where(x => x.UserName == userName).Count() == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
     public bool RegisterUser(string user, string password)
     {
         using (BookshopEntities context = new BookshopEntities())

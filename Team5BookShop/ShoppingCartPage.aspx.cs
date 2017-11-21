@@ -14,17 +14,19 @@ public partial class ShoppingCartPage : System.Web.UI.Page
         userCart = (ShoppingCart)Session["ShoppingCartObj"];
         if (userCart.Cart.Count == 0)
         {
-            Label emptyCartLabel = new Label();
-            emptyCartLabel.Text = "Your Shopping Cart is Empty";
-            Panel1.Controls.Add(emptyCartLabel);
+            ShoppingLb.Text = "Your Shopping Cart is Empty";
             GridView1.Visible = false;
             CheckoutBtn.Visible = false;
             UpdateBtn.Visible = false;
         }
         else
         {
+            ShoppingLb.Text = "Shopping Cart";
             GridView1.DataSource = userCart.Cart;
-            GridView1.DataBind();
+            if (!IsPostBack)
+            {
+                GridView1.DataBind();
+            }
         }
     }
 
@@ -44,14 +46,41 @@ public partial class ShoppingCartPage : System.Web.UI.Page
     {
         if (Session["UserID"] == null)
         {
-            string url = HttpContext.Current.Request.Url.AbsoluteUri;
+            Session["Url"] = HttpContext.Current.Request.Url.AbsoluteUri;
             Response.Redirect("~/LogIn.aspx");
         }
         else
         {
-            string url = HttpContext.Current.Request.Url.AbsoluteUri;
+            Session["Url"] = HttpContext.Current.Request.Url.AbsoluteUri;
             Response.Redirect("~/OrderReceipt.aspx");
         }
+    }
+
+    protected void UpdateBtn_Click(object sender, EventArgs e)
+    {
+        int j = 0;
+        for (int i = 0; i < GridView1.Rows.Count && i < userCart.Cart.Count; i++)
+        {
+            int input = Convert.ToInt32(((TextBox)GridView1.Rows[i].FindControl("Quantitytb")).Text);
+            if (userCart.Cart[i].Quantity != input)
+            {
+                userCart.Update(i, input);
+            }
+        }
+        while (j < userCart.Cart.Count)
+        {
+            if (userCart.Cart[j].Quantity <= 0)
+            {
+                userCart.Remove(j);
+            }
+            else
+            {
+                j++;
+            }
+        }
+        GridView1.DataBind();
+        Session["ShoppingCartObj"] = userCart;
+        Response.Redirect("~/ShoppingCartPage.aspx");
     }
 }
 

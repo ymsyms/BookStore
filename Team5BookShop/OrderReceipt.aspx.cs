@@ -14,20 +14,21 @@ public partial class OrderReceipt : System.Web.UI.Page
         userCart = (ShoppingCart)Session["ShoppingCartObj"];
         GridView1.DataSource = userCart.Cart;
         GridView1.DataBind();
+        failurelb.Visible = false;
     }
 
     protected void PurchaseBtn_Click(object sender, EventArgs e)
     {
-        DateTime current = new DateTime();
-        string userID = (string) Session["UserID"];
+        string userID = Session["UserID"].ToString();
         mailingAddress= Addresstb.Text+","+StateCitytb.Text+","+Countrytb.Text+","+ZipCodetb.Text;
         BusinessLogic buzy = new BusinessLogic();
-        if (buzy.Checkout(userID, mailingAddress, current.Date, userCart.TotalPrice(), userCart))
+        if (buzy.Checkout(userID, mailingAddress, DateTime.Now.Date, userCart.TotalPrice(), userCart))
         {
-            Response.Redirect("~/Main.Aspx");
+            Response.Redirect("~/CheckOutSuccess.aspx");
         }
         else
         {
+            failurelb.Visible = true;
             failurelb.Text = "Failed to log purchase. Please try again later";
         }
     }

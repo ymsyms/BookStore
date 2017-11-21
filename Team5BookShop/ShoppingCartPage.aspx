@@ -5,6 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="col-sm-12">
         <asp:Panel ID="Panel1" runat="server">
+            <h3>
+                <asp:Label ID="ShoppingLb" runat="server" Text="Shopping Cart"></asp:Label></h3>
             <asp:GridView ID="GridView1" Width="100%" runat="server" AutoGenerateColumns="False" ItemType="CartItem" OnRowCommand="GridView1_RowCommand">
                 <Columns>
                     <asp:BoundField DataField="Title" HeaderText="Title" />
@@ -24,7 +26,7 @@
                     <asp:ButtonField HeaderText="Delete Items" Text="Delete" CommandName="DeleteCartItem" ButtonType="Button" />
                 </Columns>
             </asp:GridView>
-            <asp:Button ID="UpdateBtn" runat="server" Text="Update" />
+            <asp:Button ID="UpdateBtn" runat="server" Text="Update" OnClick="UpdateBtn_Click" />
             <asp:Button ID="CheckoutBtn" runat="server" Text="Checkout" OnClick="CheckoutBtn_Click" />
         </asp:Panel>
     </div>
