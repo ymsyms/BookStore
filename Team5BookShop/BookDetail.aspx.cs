@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class _Default : System.Web.UI.Page
 {
-    BookshopEntities1 bk = new BookshopEntities1();
+    BookshopEntities bk = new BookshopEntities();
     int bookId;
     Book bookItem;
 

@@ -8,13 +8,13 @@ using System.Web.Util;
 
 public partial class SearchResult : System.Web.UI.Page
 {
-    BookshopEntities1 bookEntity;
+    BookshopEntities bookEntity;
     protected void Page_Load(object sender, EventArgs e)
     {
         string search;
         search= (string)(Session["SearchItem"]);
 
-        bookEntity = new BookshopEntities1();
+        bookEntity = new BookshopEntities();
         BusinessLogic bl = new BusinessLogic();
         List<Book> lstBook;
         

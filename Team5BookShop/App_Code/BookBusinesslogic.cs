@@ -17,7 +17,7 @@ public class BookBusinesslogic
     
     public Book GetBookDetails(int id)
     {
-        using (BookshopEntities1 bookEntity = new BookshopEntities1())
+        using (BookshopEntities bookEntity = new BookshopEntities())
         {
              book = (from bk in bookEntity.Books
                          where bk.BookID == id
@@ -29,7 +29,7 @@ public class BookBusinesslogic
     }
     public Category GetCategory(int catId)
     {
-        using (BookshopEntities1 category = new BookshopEntities1())
+        using (BookshopEntities category = new BookshopEntities())
         {
             Category catgry = (from ct in category.Categories
                                where ct.CategoryID == catId

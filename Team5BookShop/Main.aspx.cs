@@ -7,10 +7,10 @@ using System.Web.UI.WebControls;
 
 public partial class Main : System.Web.UI.Page
 {
-    BookshopEntities1 bookEntity;
+    BookshopEntities bookEntity;
     protected void Page_Load(object sender, EventArgs e)
     {
-        bookEntity = new BookshopEntities1();
+        bookEntity = new BookshopEntities();
         BusinessLogic bl = new BusinessLogic();
         List<Book> lstBook;
 
