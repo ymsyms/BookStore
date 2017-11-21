@@ -87,8 +87,11 @@
                 <br />
             </div>
             <div class="col-md-12 bookRegister">
-                <asp:Button ID="btnAdd" runat="server" Text="Submit" />
-            </div>            
+                <asp:Button ID="btnAdd" runat="server" Text="Submit" OnClick="btnAdd_Click" />
+            </div>  
+            <div class="col-md-12"          >
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            </div>
         </div>
     </div>
 

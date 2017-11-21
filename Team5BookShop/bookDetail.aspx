@@ -57,17 +57,7 @@
                      <asp:Label ID="Label1" runat="server" Text="" ForeColor="#CC3300" Font-Bold="True"></asp:Label>
                     </div>
                 </div>
-                <div class ="row"><br /></div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <asp:Label ID="lblDiscCode" runat="server" Text="Discount Code"></asp:Label>
-                    </div>
-                    <div class="col-md-5">
-                        <asp:DropDownList ID="DdlDiscCode" runat="server">
-                        </asp:DropDownList>
-                    </div>
-                </div>
-                <div class ="row"><br /></div>
+                <div class ="row"><br /></div>   
                 <div class="row">
                     <div class="col-md-3">
                         <asp:Button ID="BtnAddToCart" runat="server" Text="Add To Cart" OnClick="BtnAddToCart_Click1" />

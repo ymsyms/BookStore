@@ -12,6 +12,7 @@ public partial class ShoppingCartPage : System.Web.UI.Page
         //Just to test
         Book boo = new Book();
         boo.Stock = 100;
+        boo.Title = "kikiki";
         ShoppingCart userCart = new ShoppingCart();
         userCart.Add(boo, 3);
         userCart.Add(boo, 4);
@@ -22,13 +23,13 @@ public partial class ShoppingCartPage : System.Web.UI.Page
         {
             Label emptyCartLabel = new Label();
             emptyCartLabel.Text = "Your Shopping Cart is Empty";
-            ShoppingCartph.Controls.Add(emptyCartLabel);
+            Panel1.Controls.Add(emptyCartLabel);
+            GridView1.Visible = false;
+            //ShoppingCartph.Controls.Add(emptyCartLabel);
         }
         else
         {
-            
-            var qry = userCart.Cart.Select(x => new { x.Title, x.UnitPrice, x.Quantity, x.SubTotal }).ToList();
-            GridView1.DataSource = qry;
+            GridView1.DataSource = userCart.Cart;
             GridView1.DataBind();
         }
     }
