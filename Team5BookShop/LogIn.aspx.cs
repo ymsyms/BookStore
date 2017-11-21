@@ -21,7 +21,7 @@ public partial class LogIn : System.Web.UI.Page
 
         if(isValid)
         {
-            Session["userId"] = userName;
+            Session["userId"] = userBusinessLogic.GetUserIDByUserName(userName);
             Label3.Text = "Success User";
             Response.Redirect("~/Main.aspx");
         }

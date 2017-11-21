@@ -36,6 +36,7 @@
                 </div>
                 <div class="col-md-2">
                     <asp:Button ID="btnSignIn" runat="server" Text="Sign In" OnClick="btnSignIn_Click" />
+                    <asp:Button ID="btnSignOut" runat="server" Text="Sign Out" OnClick="btnSignOut_Click" />
                 </div>
 
                 <div class="col-md-2">

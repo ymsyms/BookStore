@@ -35,19 +35,39 @@ public class UserBusinessLogic
             }
         }
     }
-    public void RegisterUser(string user, string password)
+    public bool RegisterUser(string user, string password)
     {
         using (BookshopEntities context = new BookshopEntities())
         {
             if (user != null && password != null)
             {
-                User u = new User();
-                u.UserName = user;
-                u.Password = password;
-                u.UserType = "User";
-                context.Users.Add(u);
-                context.SaveChanges();
+                if (context.Users.Where(x => x.UserName == user).Count() == 0)
+                {    //Verify that user is not currently taken
+                    User u = new User();
+                    u.UserName = user;
+                    u.Password = password;
+                    u.UserType = "User";
+                    context.Users.Add(u);
+                    context.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
+            else
+            {
+                return false;
+            }
+        }
+    }
+    public int GetUserIDByUserName(string userName)
+    {
+        using (BookshopEntities context = new BookshopEntities())
+        {
+            int userID = context.Users.Where(x => x.UserName == userName).Select(y => y.UserID).First();
+            return userID;
         }
     }
 }

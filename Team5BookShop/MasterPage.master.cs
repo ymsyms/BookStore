@@ -17,4 +17,23 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         Response.Redirect("~/Login.aspx");
     }
+
+    protected void btnSignOut_Click(object sender, EventArgs e)
+    {
+        Session["userId"] = null;
+        Response.Redirect("~/Main.aspx");
+    }
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Session["userId"] == null)
+        {
+            btnSignOut.Visible = false;
+        }
+        else
+        {
+            btnSignIn.Visible = false;
+        }
+
+    }
 }
