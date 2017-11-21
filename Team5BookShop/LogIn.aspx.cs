@@ -29,7 +29,7 @@ public partial class LogIn : System.Web.UI.Page
            
             if (Session["Url"] == null || Session["Url"].Equals("http://localhost:65213/ShoppingCartPage.aspx"))
             {
-                Response.Redirect("~/OrderReceipt.aspx");
+                Response.Redirect("~/ShoppingCartPage.aspx");
             }
             else
             {

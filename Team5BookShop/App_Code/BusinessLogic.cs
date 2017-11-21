@@ -36,47 +36,6 @@ public class BusinessLogic
         }
     }
 
-    //02 login page methods (by inetmgr)
-
-    //03 registration page methods (by inetmgr)
-
-    //04 shopping cart page methods
-
-
-
-    //public void Checkout(string userID, string mailingAddress, DateTime orderDate, decimal totalPrice, ShoppingCart shoppoingCart)
-    //{
-    //    using (BookshopEntities context = new BookshopEntities())
-    //    {
-    //        //Create Order
-    //        Order order = new Order();
-    //        order.UserID = userID;
-    //        order.MailingAddress = mailingAddress;
-    //        order.OrderDate = orderDate;
-    //        order.TotalPrice = totalPrice;
-    //        context.Orders.Add(order);
-    //        context.SaveChanges();
-
-    //        //Create OrderDetails from CartItems
-    //        foreach (CartItem item in shoppingCart)
-    //        {
-    //            OrderDetail orderDetail = new OrderDetail();
-    //            orderDetail.OrderID = context.Orders.Max(x => x.OrderID);
-    //            orderDetail.BookID = item.BookID;
-    //            orderDetail.Quantity = item.Quantity;
-    //            orderDetail.UnitPrice = item.UnitPrice;
-    //            orderDetail.SubTotalPrice = item.SubTotal;
-    //            context.OrderDetails.Add(orderDetail);
-    //        }
-    //        context.SaveChanges();
-
-    //        //Clear ShoppingCart
-    //        shoppingCart.Clear();
-    //    }
-
-
-    //}
-
     public bool Checkout(string userID, string mailingAddress, DateTime orderDate, decimal totalPrice, ShoppingCart shoppingCart)
     {
         using (BookshopEntities context = new BookshopEntities())
@@ -173,7 +132,7 @@ public class BusinessLogic
             tc3.Width = 200;
 
             Label lblPrice = new Label();            
-            lblPrice.Text = lstBook[i].Price.ToString();
+            lblPrice.Text = string.Format("{0:c}", Convert.ToDecimal(lstBook[i].Price.ToString()));
 
             tc3.Controls.Add(lblPrice);
             tr1.Cells.Add(tc3);
@@ -233,7 +192,7 @@ public class BusinessLogic
             tc3.Width = 200;
 
             Label lblPrice = new Label();
-            lblPrice.Text = lstBook[i].Price.ToString();
+            lblPrice.Text = string.Format("{0:c}", Convert.ToDecimal(lstBook[i].Price.ToString()));
 
             tc3.Controls.Add(lblPrice);
             tr1.Cells.Add(tc3);
