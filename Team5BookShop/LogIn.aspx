@@ -19,7 +19,7 @@
     <asp:Label ID="Label2" runat="server" Text="Enter Password"></asp:Label>
     <input id="Password1" type="password" runat="server"/>
     <br />
-    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
-    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+    <asp:Label ID="Label3" runat="server"></asp:Label>
+    <asp:Button ID="Button1" runat="server" Text="Sign In" OnClick="Button1_Click" />
 </asp:Content>
 
