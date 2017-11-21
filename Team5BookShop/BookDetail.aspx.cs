@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 public partial class _Default : System.Web.UI.Page
 {
     BookshopEntities1 bk = new BookshopEntities1();
-    int bookId;
+    string isbn;
     Book bookItem;
 
     protected void Page_Load(object sender, EventArgs e)
@@ -16,8 +16,8 @@ public partial class _Default : System.Web.UI.Page
         string val = Request.QueryString["BookID"];
         if (val != null)
         {
-            bookId = Convert.ToInt32(val);
-            bookItem = new BookBusinesslogic().GetBookDetails(bookId);
+            isbn = val;
+            bookItem = new BookBusinesslogic().GetBookDetails(isbn);
             Category cat = new BookBusinesslogic().GetCategory(bookItem.CategoryID);
             Image2.Width = 280;
             Image2.Height = 280;

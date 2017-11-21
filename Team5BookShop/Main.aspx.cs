@@ -22,19 +22,22 @@ public partial class Main : System.Web.UI.Page
 
             for (int i = 0; i < lstBook.Count; i++)
             {
-                Image img = new Image();
+                ImageButton img = new ImageButton();
                 img.Width = 280;
                 img.Height = 280;
                 string imgName = lstBook[i].ISBN;
                 img.ImageUrl = "images/" + imgName + ".jpg";
                 PlaceHolder1.Controls.Add(img);
 
+
+                img.PostBackUrl = "~/bookDetail.aspx?BookID=" + imgName;
+
                 //Button btnCart = new Button();
                 //btnCart.Text = "Add to Cart";
                 //PlaceHolder1.Controls.Add(btnCart);
 
                 j++;
-                if (j == 4)
+                if (j == 3)
                 {
                     PlaceHolder1.Controls.Add(new LiteralControl("<br/><br/>"));
                     j = 0;
