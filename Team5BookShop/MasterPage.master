@@ -16,7 +16,9 @@
     <form id="form1" runat="server">
         <div class="wrapper">
             <div class="header row">
-                <asp:ImageButton ID="Image1" runat="server"  ImageUrl="~/images/bookstore-logo.jpg" class="logo" PostBackUrl="~/Main.aspx"  />
+                <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Main.aspx">
+                    <asp:Image ID="Image2" runat="server" ImageUrl="~/images/bookstore-logo.jpg" CssClass="logo"/>
+                </asp:HyperLink>            
             </div>
             <div class="menu row">
                 <div class="col-md-4">
@@ -42,7 +44,9 @@
             </div>
 
             <div class="content row">
-                <div class="left-col">           
+                <div class="left-col">      
+                    <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Main.aspx">All Categories</asp:HyperLink>
+                    <br />     
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=1">Children</asp:HyperLink>
                     <br />
                     <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=2">Finance</asp:HyperLink>
@@ -52,9 +56,6 @@
                     <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=4">Technical</asp:HyperLink>
                 </div>
                 <div class="right-col">
-                    <div class="contentMenu">
-                        <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Main.aspx" CssClass="homeMenu">Home</asp:HyperLink>
-                    </div>
                     <div class="contentMain">
                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                         <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
