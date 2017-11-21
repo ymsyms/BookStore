@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="col-md-2">
-                    <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" class="SubheaderButton"/>
+                    <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" class="SubheaderButton" OnClick="btnSignUp_Click"/>
                 </div>
             </div>
 
