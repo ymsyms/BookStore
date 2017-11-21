@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.Util;
 
 /// <summary>
 /// Summary description for BusinessLogic
@@ -80,6 +83,34 @@ public class BusinessLogic
             List<string> catList = context.Categories.Select(x => x.CategoryName).ToList();
             return catList;
         }
+    }
 
+    public void imageAssign(List<Book> lstBook, PlaceHolder ph)
+    {
+        int j = 0;
+
+        for (int i = 0; i < lstBook.Count; i++)
+        {
+            ImageButton img = new ImageButton();
+            img.Width = 280;
+            img.Height = 280;
+            string imgName = lstBook[i].ISBN;
+            img.ImageUrl = "images/" + imgName + ".jpg";
+
+            ph.Controls.Add(img);
+
+            img.PostBackUrl = "~/bookDetail.aspx?BookID=" + imgName;
+
+            //Button btnCart = new Button();
+            //btnCart.Text = "Add to Cart";
+            //PlaceHolder1.Controls.Add(btnCart);
+
+            j++;
+            if (j == 3)
+            {
+                ph.Controls.Add(new LiteralControl("<br/><br/>"));
+                j = 0;
+            }
+        }
     }
 }

@@ -14,19 +14,18 @@ public class BookBusinesslogic
     BookshopEntities1 be;
     Category category;
 
-
     public BookBusinesslogic()
     {
 
     }
-    
+
     public Book GetBookDetails(string id)
     {
         using (BookshopEntities1 bookEntity = new BookshopEntities1())
         {
-             book = (from bk in bookEntity.Books
-                         where bk.ISBN == id
-                         select bk).First();
+            book = (from bk in bookEntity.Books
+                    where bk.ISBN == id
+                    select bk).First();
             catId = book.CategoryID;
             return book;
         }
@@ -51,21 +50,21 @@ public class BookBusinesslogic
 
         try
         {
-            book.Title = title;            
+            book.Title = title;
             book.ISBN = isbn;
             book.Author = author;
             book.Stock = stock;
-            book.Price = price;            
+            book.Price = price;
 
-            var c = be.Categories.Where(x => x.CategoryName == cat).Select(x => x.CategoryID).First();            
+            var c = be.Categories.Where(x => x.CategoryName == cat).Select(x => x.CategoryID).First();
             book.CategoryID = c;
 
             be.Books.Add(book);
             return true;
         }
-        catch(Exception ex)
-        {            
+        catch (Exception ex)
+        {
             return false;
-        } 
-    }
+        }
+    }    
 }

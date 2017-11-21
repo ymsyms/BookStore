@@ -8,6 +8,9 @@
             font: bold;
             color: red;
         }
+        .auto-style1 {
+            width: 201px;
+        }
     </style>
     <div class="container bookRegister">
         <div class="row">
@@ -72,7 +75,7 @@
                 Book Stock:
             </div>
             <div class="col-md-10">
-                <input type="number" id="bookStock" runat="server" min="0" width="199px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="number" id="bookStock" runat="server" min="0" class="auto-style1" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
             <div class="col-md-12">
                 <br />
@@ -90,7 +93,7 @@
                 <asp:Button ID="btnAdd" runat="server" Text="Submit" OnClick="btnAdd_Click" />
             </div>  
             <div class="col-md-12"          >
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label1" runat="server"></asp:Label>
             </div>
         </div>
     </div>
