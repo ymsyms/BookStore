@@ -53,7 +53,7 @@
 }
 .SubheaderButton{
 
-    background-color:white; /* Green */
+    background-color:white; 
     border: none;
     color: black;
     padding-left:2pt;    
@@ -92,4 +92,30 @@
      color:white;
      padding:5% 0 0 10%; 
      font-size:14px;      
+}
+.loginButton
+{
+    background-color: #5DBCD2;
+    border: none;
+    color: black;
+    padding-left:2pt;    
+    text-decoration:solid;      
+    margin: 2% 0 0 0;
+    cursor: pointer;   
+     width:75pt;
+    height:25px; 
+    font-weight:300;
+}
+.RegistrationButton
+{
+    background-color: #5DBCD2;
+    border: none;
+    color: black;
+    padding-left:6% 0 0 0;    
+    text-decoration:solid;      
+    margin:0 0 0 14%;
+    cursor: pointer;   
+    width:75pt;
+    height:25px; 
+    font-weight:300;
 }
