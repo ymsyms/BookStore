@@ -62,12 +62,12 @@ public class UserBusinessLogic
             }
         }
     }
-    public int GetUserIDByUserName(string userName)
+    public User GetUserByUserName(string userName)
     {
         using (BookshopEntities context = new BookshopEntities())
         {
-            int userID = context.Users.Where(x => x.UserName == userName).Select(y => y.UserID).First();
-            return userID;
+            User user = context.Users.Where(x => x.UserName == userName).First();
+            return user;
         }
     }
 }

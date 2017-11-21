@@ -8,5 +8,4 @@
         <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Main.aspx">Home</asp:HyperLink>
     </div>
         <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
-       
 </asp:Content>
