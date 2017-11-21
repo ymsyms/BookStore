@@ -27,13 +27,15 @@ public partial class LogIn : System.Web.UI.Page
 
             Label3.Text = "Success User";
            
-            if (Session["Url"] == null || Session["Url"].Equals("http://localhost:65213/ShoppingCartPage.aspx"))
+            if (Session["Url"] == null)
             {
-                Response.Redirect("~/ShoppingCartPage.aspx");
+                Response.Redirect("~/Main.aspx");     
             }
             else
             {
-                Response.Redirect("~/Main.aspx");
+                //Response.Redirect("~/ShoppingCartPage.aspx");
+                Response.Redirect("~/ShoppingCartPage.aspx");
+                Session["Url"] = null;
             }
         }
         else
