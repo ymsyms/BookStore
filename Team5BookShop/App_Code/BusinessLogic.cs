@@ -76,6 +76,44 @@ public class BusinessLogic
 
 
     //}
+
+    public void Checkout(string userID, string mailingAddress, DateTime orderDate, decimal totalPrice, ShoppingCart shoppingCart)
+    {
+        using (BookshopEntities context = new BookshopEntities())
+        {
+            //Create Order
+            Order order = new Order();
+            int userIDHolder;
+            bool validUserID = Int32.TryParse(userID, out userIDHolder);
+
+            order.MailingAddress = mailingAddress;
+            order.OrderDate = orderDate;
+            order.TotalPrice = Convert.ToDouble(totalPrice);
+
+            if (validUserID)
+            {
+                order.UserID = userIDHolder;
+                context.Orders.Add(order);
+                context.SaveChanges();
+
+                //Create OrderDetails from CartItems
+                foreach (CartItem item in shoppingCart.Cart)
+                {
+                    OrderDetail orderDetail = new OrderDetail();
+                    orderDetail.OrderID = context.Orders.Max(x => x.OrderID);
+                    orderDetail.BookID = Convert.ToInt16(item.BookID);
+                    orderDetail.Quantity = Convert.ToInt16(item.Quantity);
+                    orderDetail.UnitPrice = Convert.ToDouble(item.UnitPrice);
+                    orderDetail.SubtotalPrice = Convert.ToDouble(item.SubTotal);
+                    context.OrderDetails.Add(orderDetail);
+                }
+                context.SaveChanges();
+
+                //Clear ShoppingCart
+                shoppingCart.Clear();
+            }
+        }
+    }
     public List<string> GetCategoryList()
     {
         using (BookshopEntities context = new BookshopEntities())

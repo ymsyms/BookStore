@@ -8,7 +8,6 @@ using System.Web.Util;
 
 public partial class SearchResult : System.Web.UI.Page
 {
-    BookshopEntities1 bookEntity;
     BusinessLogic bl;
     protected void Page_Load(object sender, EventArgs e)
     {        
