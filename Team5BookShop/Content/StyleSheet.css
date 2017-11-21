@@ -37,14 +37,13 @@
     float : left;
     border: 1px solid #d0d0d0;
     border-top: 0px;
-    width : 20%;
+    width : 14%;
     border : 1px solid #808080; 
-    padding: 1% 0 5% 3%;
 }
 .right-col
 {
     float : left;
-    width : 80%;
+    width : 86%;
     border : 1px solid #808080;
     padding: 1% 0 5% 3%;
 }
@@ -66,9 +65,31 @@
     font-weight:300;
 
 }
-.hyperLinkCategoryStyle{
- text-align:center;
- padding-left:25px;
- color:black;
 
+.hyperLinkCategoryStyle {
+  text-align:left center;
+  cursor: pointer;
+  display:block;
+  padding:3% 0 0 10%;
+  height:40px;
+  color:black;
+  font-size:14px;
+  border-bottom : 1px solid #5DBCD2;
+  margin : 2% 0 0 0;
+}
+
+.hyperLinkCategoryStyle:hover 
+{
+    background-color:white;
+    transition: all 0.8s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);   
+}
+.CategoryHeader{
+
+     background-color: #5DBCD2; 
+     display: block;
+     height:40px;
+     color:white;
+     padding:5% 0 0 10%; 
+     font-size:14px;      
 }

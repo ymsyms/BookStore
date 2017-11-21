@@ -30,13 +30,17 @@ public partial class MasterPage : System.Web.UI.MasterPage
         if (Session["userId"] == null)
         {
             btnSignOut.Visible = false;
+            btnAddBook.Visible = false;
         }
         else
         {
             btnSignIn.Visible = false;
             btnSignUp.Visible = false;
+            if (Session["UserType"].Equals("Admin"))
+            {
+                btnAddBook.Visible = true;
+            }
         }
-
     }
     protected void btnSignUp_Click(object sender, EventArgs e)
     {
@@ -46,5 +50,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
     protected void btnCart_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/ShoppingCartPage.aspx");  
+    }
+
+    protected void btnAddBook_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/BookRegistration.aspx");
     }
 }
