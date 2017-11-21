@@ -19,7 +19,14 @@ public partial class SearchResult : System.Web.UI.Page
 
         try
         {
-            bl.imageAssign(lstBook, PlaceHolder1);
+            if (Session["userType"] == null || Session["userType"].Equals("Customer"))
+            {
+                bl.imageAssignForCustomer(lstBook, PlaceHolder1);
+            }
+            else if (Session["userType"].Equals("Admin"))
+            {
+                bl.imageAssign(lstBook, PlaceHolder1);
+            }
         }
         catch (Exception ex)
         {

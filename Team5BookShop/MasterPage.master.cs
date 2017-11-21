@@ -28,6 +28,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        ShoppingCart shpcrt = (ShoppingCart)Session["ShoppingCartObj"];
+        btnCart.Text = "Shopping Cart | " + shpcrt.Cart.Count.ToString();
         if (Session["userId"] == null)
         {
             btnSignOut.Visible = false;

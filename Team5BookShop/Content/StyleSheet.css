@@ -119,3 +119,12 @@
     height:25px; 
     font-weight:300;
 }
+.CartItemCountLabel
+{
+  width: 3%;
+  border-radius: 15%;
+  border: 1px solid red;
+  background-color:red;
+  color:white;
+  text-align:center;
+}
