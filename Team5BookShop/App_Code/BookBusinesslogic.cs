@@ -11,7 +11,7 @@ public class BookBusinesslogic
 {
     Book book;
     int catId;
-    BookshopEntities1 be;
+    BookshopEntities be;
     Category category;
 
 
@@ -45,7 +45,7 @@ public class BookBusinesslogic
 
     public bool AddBook(string title, string cat, string isbn, string author, int stock, decimal price)
     {
-        be = new BookshopEntities1();
+        be = new BookshopEntities();
         book = new Book();
         category = new Category();
 
