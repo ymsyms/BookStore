@@ -8,6 +8,7 @@ using System.Threading;
 
 public partial class UserRegisteration : System.Web.UI.Page
 {
+    UserBusinessLogic ub;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -15,7 +16,17 @@ public partial class UserRegisteration : System.Web.UI.Page
 
     protected void Unnamed7_Click(object sender, EventArgs e)
     {
-        Thread.Sleep(3000);
-        Response.Redirect("~/Login.aspx");
+        ub = new UserBusinessLogic();
+        string user = txtUserName.Text;
+        string password = txtPassword.Text;
+        bool registrationSuccess = ub.RegisterUser(user, password);
+        if (registrationSuccess)
+        {
+            Response.Redirect("~/Login.aspx");
+        }
+        else
+        {
+            Label1.Text = "This user name already taken, please try another user name.";
+        }
     }
 }
