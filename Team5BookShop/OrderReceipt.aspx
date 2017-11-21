@@ -34,7 +34,7 @@
         <div class="col-sm-12">
             <asp:Panel ID="Panel1" runat="server">
                 <h3>Checkout Summary</h3>
-                <asp:GridView ID="GridView1" Width="100%" runat="server" AutoGenerateColumns="False" ItemType="CartItem" OnRowCommand="GridView1_RowCommand">
+                <asp:GridView ID="GridView1" Width="100%" runat="server" AutoGenerateColumns="False" ItemType="CartItem" >
                     <Columns>
                         <asp:BoundField DataField="Title" HeaderText="Title" />
                         <asp:BoundField DataField="UnitPrice" HeaderText="Unit Price" />
