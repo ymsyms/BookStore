@@ -60,7 +60,7 @@ public class UserBusinessLogic
                     User u = new User();
                     u.UserName = user;
                     u.Password = password;
-                    u.UserType = "User";
+                    u.UserType = "Customer";
                     context.Users.Add(u);
                     context.SaveChanges();
                     return true;
