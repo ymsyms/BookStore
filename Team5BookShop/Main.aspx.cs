@@ -14,14 +14,13 @@ public partial class Main : System.Web.UI.Page
         bl = new BusinessLogic();
         List<Book> lstBook;
         lstBook = bl.GetAllBooks();
-
         try
         {
             if(Session["userType"] == null || Session["userType"].Equals("Customer"))
             {
                 bl.imageAssignForCustomer(lstBook, PlaceHolder1);
             }
-             else if (Session["userType"].Equals("admin"))
+             else if (Session["userType"].Equals("Admin"))
              {
                  bl.imageAssign(lstBook, PlaceHolder1);
              }
