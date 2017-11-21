@@ -19,7 +19,7 @@ public partial class OrderReceipt : System.Web.UI.Page
 
     protected void PurchaseBtn_Click(object sender, EventArgs e)
     {
-        string userID = (string) Session["UserID"];
+        string userID = Session["UserID"].ToString();
         mailingAddress= Addresstb.Text+","+StateCitytb.Text+","+Countrytb.Text+","+ZipCodetb.Text;
         BusinessLogic buzy = new BusinessLogic();
         if (buzy.Checkout(userID, mailingAddress, DateTime.Now.Date, userCart.TotalPrice(), userCart))
