@@ -13,6 +13,7 @@ public class CartItem
     int quantity;
     decimal unitPrice;
     int bookID;
+    int stock;
 
     public CartItem(Book book, int quantity)
     {
@@ -20,6 +21,7 @@ public class CartItem
         this.quantity = quantity;
         this.unitPrice = book.Price;
         this.bookID = book.BookID;
+        this.stock = book.Stock;
     }
 
     public string Title
@@ -27,6 +29,14 @@ public class CartItem
         get
         {
             return title;
+        }
+    }
+
+    public int Stock
+    {
+        get
+        {
+            return stock;
         }
     }
 

@@ -29,6 +29,19 @@ public class ShoppingCart
         }
     }
 
+    public bool Update(int index, int newQuantity)
+    {
+        if(cart[index].Stock >= newQuantity)
+        {
+            cart[index].Quantity = newQuantity;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public void Clear()
     {
         cart.Clear();
