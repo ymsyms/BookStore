@@ -29,6 +29,7 @@
     margin-left: auto;
     clear : both;
     width : 100%;
+    height :auto;
 }
 .left-col
 {
@@ -36,7 +37,6 @@
     border: 1px solid #d0d0d0;
     border-top: 0px;
     width : 20%;
-    height : 1000px;
     border : 1px solid #808080;
     padding: 1% 0 0 3%;
 }
@@ -44,7 +44,6 @@
 {
     float : left;
     width : 80%;
-    height : 1000px;
     border : 1px solid #808080;
     padding: 1% 0 0 3%;
 }

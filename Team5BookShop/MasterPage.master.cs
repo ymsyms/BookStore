@@ -41,4 +41,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         Response.Redirect("~/UserRegistration.aspx");
     }
+
+    protected void btnCart_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/ShoppingCartPage.aspx");  
+    }
 }

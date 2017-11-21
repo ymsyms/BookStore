@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <asp:Button ID="btnCart" runat="server" Text="Shopping Cart" class="SubheaderButton"/>
+                    <asp:Button ID="btnCart" runat="server" Text="Shopping Cart" class="SubheaderButton" OnClick="btnCart_Click"/>
                 </div>
                 <div class="col-md-2">
                     <asp:Button ID="btnSignIn" runat="server" Text="Sign In" OnClick="btnSignIn_Click" class="SubheaderButton"/>
