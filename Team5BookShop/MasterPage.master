@@ -40,20 +40,23 @@
                 </div>
 
                 <div class="col-md-2">
+                    <asp:Button ID="btnAddBook" runat="server" Text="Register Book" class="SubheaderButton" OnClick="btnAddBook_Click"/>
                     <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" class="SubheaderButton" OnClick="btnSignUp_Click"/>
                 </div>
             </div>
 
             <div class="content row">
-                <div class="left-col">      
+                <div class="left-col">     
+                    <asp:Label ID="HyperLink7" runat="server" CssClass="CategoryHeader"> Categories</asp:Label> 
+ 
                     <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Main.aspx" CssClass="hyperLinkCategoryStyle">All Categories</asp:HyperLink>
-                    <br />     
+          
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=1"  CssClass="hyperLinkCategoryStyle">Children</asp:HyperLink>
-                    <br />
+ 
                     <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=2"  CssClass="hyperLinkCategoryStyle">Finance</asp:HyperLink>
-                     <br />
+        
                     <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=3"  CssClass="hyperLinkCategoryStyle">Non-Factional</asp:HyperLink>
-                     <br />
+                 
                     <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=4"  CssClass="hyperLinkCategoryStyle">Technical</asp:HyperLink>
                 </div>
                 <div class="right-col">
