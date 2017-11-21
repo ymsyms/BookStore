@@ -3,6 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+     <div class="contentMenu">
+     <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Main.aspx">Home</asp:HyperLink> 
+     <span>>Register</span>
+    </div>
+    <h3>Team5 Book Store Registration</h3>
     <asp:label runat="server" text="User Name: "></asp:label>
     <asp:textbox ID="txtUserName" runat="server"></asp:textbox>
     <asp:requiredfieldvalidator runat="server" errormessage="User Name cannot be empty" ControlToValidate="txtUserName">*Required</asp:requiredfieldvalidator>
