@@ -29,6 +29,8 @@
     margin-left: auto;
     clear : both;
     width : 100%;
+    height :auto;
+    
 }
 .left-col
 {
@@ -36,22 +38,37 @@
     border: 1px solid #d0d0d0;
     border-top: 0px;
     width : 20%;
-    height : 1000px;
-    border : 1px solid #808080;
+    border : 1px solid #808080; 
+    padding: 1% 0 5% 3%;
 }
 .right-col
 {
     float : left;
     width : 80%;
-    height : 1000px;
     border : 1px solid #808080;
-    padding: 10% 0 0 3%;
+    padding: 1% 0 5% 3%;
 }
 .contentMenu
 {
     height : 30px;
-    padding : 3% 0% 0% 5%;
 }
-.homeMenu{
-    margin : 3% 0 0 3%;
+.SubheaderButton{
+
+    background-color:white; /* Green */
+    border: none;
+    color: black;
+    padding-left:2pt;    
+    text-decoration:solid;      
+    margin: 4px 2px;
+    cursor: pointer;   
+    width:85pt;
+    height:20pt; 
+    font-weight:300;
+
+}
+.hyperLinkCategoryStyle{
+ text-align:center;
+ padding-left:25px;
+ color:black;
+
 }

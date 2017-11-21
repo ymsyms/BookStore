@@ -16,7 +16,9 @@
     <form id="form1" runat="server">
         <div class="wrapper">
             <div class="header row">
-                <asp:ImageButton ID="Image1" runat="server"  ImageUrl="~/images/bookstore-logo.jpg" class="logo" PostBackUrl="~/Main.aspx"  />
+                <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Main.aspx">
+                    <asp:Image ID="Image2" runat="server" ImageUrl="~/images/bookstore-logo.jpg" CssClass="logo"/>
+                </asp:HyperLink>            
             </div>
             <div class="menu row">
                 <div class="col-md-4">
@@ -30,31 +32,31 @@
                 </div>
 
                 <div class="col-md-4">
-                    <asp:Button ID="btnCart" runat="server" Text="Shopping Cart" />
+                    <asp:Button ID="btnCart" runat="server" Text="Shopping Cart" class="SubheaderButton" OnClick="btnCart_Click"/>
                 </div>
                 <div class="col-md-2">
-                    <asp:Button ID="btnSignIn" runat="server" Text="Sign In" OnClick="btnSignIn_Click" />
+                    <asp:Button ID="btnSignIn" runat="server" Text="Sign In" OnClick="btnSignIn_Click" class="SubheaderButton"/>
+                    <asp:Button ID="btnSignOut" runat="server" Text="Sign Out" OnClick="btnSignOut_Click" class="SubheaderButton"/>
                 </div>
 
                 <div class="col-md-2">
-                    <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" />
+                    <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" class="SubheaderButton" OnClick="btnSignUp_Click"/>
                 </div>
             </div>
 
             <div class="content row">
-                <div class="left-col">           
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=1">Children</asp:HyperLink>
+                <div class="left-col">      
+                    <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Main.aspx" CssClass="hyperLinkCategoryStyle">All Categories</asp:HyperLink>
+                    <br />     
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=1"  CssClass="hyperLinkCategoryStyle">Children</asp:HyperLink>
                     <br />
-                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=2">Finance</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=2"  CssClass="hyperLinkCategoryStyle">Finance</asp:HyperLink>
                      <br />
-                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=3">Non-Factional</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=3"  CssClass="hyperLinkCategoryStyle">Non-Factional</asp:HyperLink>
                      <br />
-                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=4">Technical</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/SearchCategoryResult.aspx?cat=4"  CssClass="hyperLinkCategoryStyle">Technical</asp:HyperLink>
                 </div>
                 <div class="right-col">
-                    <div class="contentMenu">
-                        <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Main.aspx" CssClass="homeMenu">Home</asp:HyperLink>
-                    </div>
                     <div class="contentMain">
                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                         <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>

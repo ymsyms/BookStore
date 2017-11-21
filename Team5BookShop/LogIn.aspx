@@ -9,8 +9,19 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    
+    <div class="contentMenu">
+        <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Main.aspx">Home</asp:HyperLink> 
+        <span>>Login</span>
+    </div>
+    <h3>Welcome to Team5 Book Store</h3>
+    <asp:Label ID="Label1" runat="server" Text="Enter User ID"></asp:Label>
     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-    
+    <br />
+    <asp:Label ID="Label2" runat="server" Text="Enter Password"></asp:Label>
+    <input id="Password1" type="password" runat="server"/>
+    <br />
+    <asp:Label ID="Label3" runat="server"></asp:Label>
+    <asp:Button ID="Button1" runat="server" Text="Sign In" OnClick="Button1_Click" />
+    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/UserRegistration.aspx">New Customer?</asp:HyperLink>
 </asp:Content>
 
