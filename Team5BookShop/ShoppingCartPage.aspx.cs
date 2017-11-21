@@ -23,7 +23,10 @@ public partial class ShoppingCartPage : System.Web.UI.Page
         {
             ShoppingLb.Text = "Shopping Cart";
             GridView1.DataSource = userCart.Cart;
-            GridView1.DataBind();
+            if (!IsPostBack)
+            {
+                GridView1.DataBind();
+            }
         }
     }
 
