@@ -8,11 +8,13 @@
     padding: 0;
     position: relative;
     height : 100px;
+    background-color:#ffffff;
 }
 .logo
 {
     width : 16%;
     margin-left:2%;
+    min-width: 250px;
 }
 .menu
 {
@@ -30,6 +32,8 @@
     clear : both;
     width : 100%;
     height :auto;
+    margin-top:146px;
+
     
 }
 .left-col
