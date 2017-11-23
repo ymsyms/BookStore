@@ -3,9 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server" >    
-    <style>
-
-    </style>
+    <link href="Content/StyleSheet.css" rel="stylesheet" />
     <div class="container bookRegister">
 
         <div class="row">            
@@ -92,8 +90,8 @@
             <div class="col-md-12">
                 <br />
             </div>
-            <div class="col-md-12 bookRegister">
-                <asp:Button ID="btnAdd" runat="server" Text="Submit" OnClick="btnAdd_Click" class="btn btn-primary" ValidationGroup="BookRegisterValidate" />
+            <div class="col-md-12 moButton moButton2">
+                <asp:Button ID="btnAdd" runat="server" Text="Submit" OnClick="btnAdd_Click" class="moButton moButton2" ValidationGroup="BookRegisterValidate" />
             </div>  
             <div class="col-md-12"          >
                 <asp:Label ID="Label1" runat="server" ForeColor="Green"></asp:Label>

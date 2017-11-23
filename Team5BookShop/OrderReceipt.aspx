@@ -62,7 +62,7 @@
 
                     </Columns>
                 </asp:GridView>
-                <asp:Button ID="PurchaseBtn" runat="server" Text="Purchase" OnClick="PurchaseBtn_Click" />
+                <asp:Button ID="PurchaseBtn" runat="server" Text="Purchase" OnClick="PurchaseBtn_Click" CssClass="moButton moButton2" />
                 <asp:Label ID="failurelb" runat="server" Text=""></asp:Label>
             </asp:Panel>
         </div>

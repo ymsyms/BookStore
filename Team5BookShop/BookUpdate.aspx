@@ -95,8 +95,8 @@
                 <br />
             </div>
             <div class="col-md-12 bookRegister">
-                <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" /> &nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
+                <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" CssClass="moButton moButton2" /> &nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" CssClass="moButton moButton2" />
             </div>   
         </div>
     </div>

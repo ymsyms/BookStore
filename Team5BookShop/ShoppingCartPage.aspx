@@ -26,8 +26,8 @@
                     <asp:ButtonField HeaderText="Delete Items" Text="Delete" CommandName="DeleteCartItem" ButtonType="Button" />
                 </Columns>
             </asp:GridView>
-            <asp:Button ID="UpdateBtn" runat="server" Text="Update" OnClick="UpdateBtn_Click" class="btn btn-primary"/>
-            <asp:Button ID="CheckoutBtn" runat="server" Text="Checkout" OnClick="CheckoutBtn_Click" class="btn btn-info"/>
+            <asp:Button ID="UpdateBtn" runat="server" Text="Update" OnClick="UpdateBtn_Click" class="moButton moButton2"/>
+            <asp:Button ID="CheckoutBtn" runat="server" Text="Checkout" OnClick="CheckoutBtn_Click" class="moButton moButton2"/>
         </asp:Panel>
     </div>
 </asp:Content>

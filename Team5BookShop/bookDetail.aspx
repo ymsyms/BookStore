@@ -3,11 +3,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <link href="Content/StyleSheet.css" rel="stylesheet" />
     <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <div class ="row"><br /></div>
-                <asp:Image ID="Image2"  runat="server" ImageUrl="image"  />
+                <asp:Image ID="Image2"  runat="server" ImageUrl="image" cssclass="moButton moButton2" />
             </div>
             <div class="col-md-8">
                 <div class ="row"><br /></div>
@@ -60,7 +61,7 @@
                 <div class ="row"><br /></div>   
                 <div class="row">
                     <div class="col-md-3">
-                        <asp:Button ID="BtnAddToCart" runat="server" Text="Add To Cart" OnClick="BtnAddToCart_Click1" />
+                        <asp:Button ID="BtnAddToCart" runat="server" Text="Add To Cart" OnClick="BtnAddToCart_Click1" CssClass="moButton moButton2" />
                     </div>
                 </div>                
             </div>

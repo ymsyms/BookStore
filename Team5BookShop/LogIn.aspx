@@ -24,7 +24,7 @@
     <input id="Password1" type="password" runat="server" class="form-control" />
         </div>
         <asp:Label ID="Label3" runat="server"></asp:Label>
-        <asp:Button ID="Button1" runat="server" Text="Sign In" OnClick="Button1_Click" CssClass="loginButton" />&nbsp
+        <asp:Button ID="Button1" runat="server" Text="Sign In" OnClick="Button1_Click" CssClass="moButton moButton2" />&nbsp
     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/UserRegistration.aspx">New Customer?</asp:HyperLink>
 
     </div>

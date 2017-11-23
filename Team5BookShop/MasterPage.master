@@ -25,7 +25,7 @@
                     <div class="input-group add-on">
                         <input class="form-control" placeholder="Search" runat="server" name="srch-term" id="txtSearch" type="text" />
                         <div class="input-group-btn">
-                            <asp:Button class="btn btn-default" id="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click"/>
+                            <asp:Button class="btn btn-default"  id="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click"/>
                             <%--<i class="glyphicon glyphicon-search" style="height: 14px"></i>--%>
                         </div>
                     </div>
@@ -34,11 +34,11 @@
                 <div class="col-md-2">
                 </div>
                 <div class="col-md-8">
-                    <asp:Button ID="btnCart" runat="server" Text="Shopping Cart" class="SubheaderButton" OnClick="btnCart_Click"/>       
-                    <asp:Button ID="btnSignIn" runat="server" Text="Sign In" OnClick="btnSignIn_Click" class="SubheaderButton"/>
-                    <asp:Button ID="btnAddBook" runat="server" Text="Register Book" class="SubheaderButton" OnClick="btnAddBook_Click"/>
-                    <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" class="SubheaderButton" OnClick="btnSignUp_Click"/>
-                    <asp:Button ID="btnSignOut" runat="server" Text="Sign Out" OnClick="btnSignOut_Click" class="SubheaderButton"/>
+                    <asp:Button ID="btnCart" style="width:28%" runat="server" Text="Shopping Cart" class="SubheaderButton" OnClick="btnCart_Click"/>       
+                    <asp:Button ID="btnSignIn" style="width:28%" runat="server" Text="Sign In" OnClick="btnSignIn_Click" class="SubheaderButton"/>
+                    <asp:Button ID="btnAddBook" style="width:28%" runat="server" Text="Register Book" class="SubheaderButton" OnClick="btnAddBook_Click"/>
+                    <asp:Button ID="btnSignUp" style="width:28%" runat="server" Text="Sign Up" class="SubheaderButton" OnClick="btnSignUp_Click"/>
+                    <asp:Button ID="btnSignOut" style="width:28%" runat="server" Text="Sign Out" OnClick="btnSignOut_Click" class="SubheaderButton"/>
                 </div>
             </div>
 
